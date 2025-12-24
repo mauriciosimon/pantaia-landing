@@ -1113,6 +1113,52 @@
         </div>
     </section>
 
+    <!-- Want to Know More Section -->
+    <section class="relative py-20 lg:py-28 bg-dark-800 overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-accent-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="gradient-border rounded-2xl p-8 md:p-12 text-center reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Want to know more?</h2>
+                <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
+                    Chat with Mauricio's AI Assistant for an in-depth conversation about his experience, skills, or portfolio. Ask anything — from technical details to work style.
+                </p>
+
+                <!-- Feature Highlights -->
+                <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-8">
+                    <div class="flex items-center space-x-2 text-gray-300">
+                        <span class="text-2xl">🎯</span>
+                        <span class="text-sm">Ask about specific projects</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-300">
+                        <span class="text-2xl">💼</span>
+                        <span class="text-sm">Explore his experience</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-300">
+                        <span class="text-2xl">🛠️</span>
+                        <span class="text-sm">Discover his skills</span>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <button
+                    id="open-chat-cta"
+                    class="relative z-10 inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl text-white font-semibold hover:from-primary-400 hover:to-accent-400 transition-all hover:scale-105 shadow-lg shadow-primary-500/25"
+                >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                    <span>Start a Conversation</span>
+                </button>
+
+                <p class="text-gray-500 text-sm mt-4">Powered by Claude API — yes, Mauricio built this too</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="relative py-24 lg:py-32 bg-dark-900 overflow-hidden">
         <!-- Background elements -->
@@ -1246,12 +1292,13 @@
     <!-- Floating Chat Button -->
     <button
         id="chat-button"
-        class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-pulse-glow"
+        class="fixed bottom-6 right-6 z-50 px-5 py-3 md:px-6 md:py-3.5 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg flex items-center space-x-2 hover:scale-105 transition-transform animate-pulse-glow"
         title="Ask about Mauricio"
     >
-        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
         </svg>
+        <span class="text-white font-medium text-sm md:text-base">Ask about Mauricio</span>
     </button>
 
     <!-- Chat Panel -->
@@ -1290,8 +1337,16 @@
         <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-1">
             <!-- Welcome Message -->
             <div class="flex justify-start mb-3">
-                <div class="bg-gray-700 text-gray-100 rounded-2xl px-4 py-2 max-w-[85%] rounded-bl-md">
-                    <p class="text-sm">Hi! I'm an AI assistant that knows about Mauricio's work and experience. Ask me anything about his projects, skills, or background!</p>
+                <div class="bg-gray-700 text-gray-100 rounded-2xl px-4 py-3 max-w-[85%] rounded-bl-md">
+                    <p class="text-sm mb-2">👋 Hi! I'm Mauricio's AI Assistant.</p>
+                    <p class="text-sm mb-2">I can help you learn about:</p>
+                    <ul class="text-sm text-gray-300 ml-1 mb-2 space-y-0.5">
+                        <li>• His projects and case studies</li>
+                        <li>• Technical skills and tools he uses</li>
+                        <li>• Leadership experience and work style</li>
+                        <li>• Whether he'd be a good fit for your team</li>
+                    </ul>
+                    <p class="text-sm">Ask me anything — I'm here for an in-depth conversation about his experience!</p>
                 </div>
             </div>
         </div>
@@ -1300,10 +1355,16 @@
         <div id="suggested-questions" class="px-4 pb-2 flex-shrink-0">
             <div class="flex flex-wrap gap-2">
                 <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
-                    What projects has he worked on?
+                    What's his most impressive project?
                 </button>
                 <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
-                    What's his AI experience?
+                    How does he approach problem-solving?
+                </button>
+                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
+                    What's his leadership experience?
+                </button>
+                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
+                    What tools does he work with?
                 </button>
                 <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
                     Is he available for hire?
@@ -1313,6 +1374,7 @@
 
         <!-- Chat Input -->
         <div class="p-4 border-t border-white/10 flex-shrink-0">
+            <p class="text-center text-xs text-gray-400 mb-2">Go ahead — ask me anything specific. I love in-depth questions.</p>
             <div class="flex items-center space-x-2">
                 <input
                     type="text"
@@ -1443,6 +1505,18 @@
             chatPanel.classList.add('hidden');
             chatButton.classList.remove('hidden');
         });
+
+        // CTA button to open chat
+        const openChatCta = document.getElementById('open-chat-cta');
+        if (openChatCta) {
+            openChatCta.addEventListener('click', () => {
+                chatPanel.classList.remove('hidden');
+                chatButton.classList.add('hidden');
+                chatInput.focus();
+                // Scroll chat into view on mobile
+                chatPanel.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            });
+        }
 
         // Add message to chat
         function addMessage(content, isUser = false) {
