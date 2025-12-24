@@ -1242,6 +1242,97 @@
         </div>
     </section>
 
+    <!-- Chat Widget -->
+    <!-- Floating Chat Button -->
+    <button
+        id="chat-button"
+        class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg flex items-center justify-center hover:scale-110 transition-transform animate-pulse-glow"
+        title="Ask about Mauricio"
+    >
+        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+        </svg>
+    </button>
+
+    <!-- Chat Panel -->
+    <div
+        id="chat-panel"
+        class="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] h-[550px] max-h-[calc(100vh-6rem)] bg-dark-800 rounded-2xl shadow-2xl border border-white/10 flex flex-col overflow-hidden hidden"
+    >
+        <!-- Chat Header -->
+        <div class="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-primary-600 to-accent-600 flex-shrink-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold text-sm">Mauricio's AI Assistant</h3>
+                    <p class="text-white/70 text-xs">Ask me anything about his work</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-1">
+                <button id="chat-minimize" class="p-2 hover:bg-white/10 rounded-lg transition-colors" title="Minimize">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                    </svg>
+                </button>
+                <button id="chat-close" class="p-2 hover:bg-white/10 rounded-lg transition-colors" title="Close">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-1">
+            <!-- Welcome Message -->
+            <div class="flex justify-start mb-3">
+                <div class="bg-gray-700 text-gray-100 rounded-2xl px-4 py-2 max-w-[85%] rounded-bl-md">
+                    <p class="text-sm">Hi! I'm an AI assistant that knows about Mauricio's work and experience. Ask me anything about his projects, skills, or background!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested Questions -->
+        <div id="suggested-questions" class="px-4 pb-2 flex-shrink-0">
+            <div class="flex flex-wrap gap-2">
+                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
+                    What projects has he worked on?
+                </button>
+                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
+                    What's his AI experience?
+                </button>
+                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
+                    Is he available for hire?
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="p-4 border-t border-white/10 flex-shrink-0">
+            <div class="flex items-center space-x-2">
+                <input
+                    type="text"
+                    id="chat-input"
+                    placeholder="Ask a question..."
+                    class="flex-1 px-4 py-2.5 bg-gray-900 border border-gray-700 rounded-xl text-white text-sm placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
+                >
+                <button
+                    id="chat-send"
+                    class="w-10 h-10 rounded-xl bg-primary-500 hover:bg-primary-400 flex items-center justify-center transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-center text-xs text-gray-500 mt-2">Powered by Claude</p>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-dark-900 border-t border-white/5 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1318,6 +1409,139 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Chat Widget Functionality
+        const chatButton = document.getElementById('chat-button');
+        const chatPanel = document.getElementById('chat-panel');
+        const chatClose = document.getElementById('chat-close');
+        const chatMinimize = document.getElementById('chat-minimize');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const chatSend = document.getElementById('chat-send');
+        const suggestedQuestions = document.querySelectorAll('.suggested-question');
+
+        let conversationHistory = [];
+        let isTyping = false;
+
+        // Toggle chat panel
+        chatButton.addEventListener('click', () => {
+            chatPanel.classList.toggle('hidden');
+            chatButton.classList.toggle('hidden');
+            if (!chatPanel.classList.contains('hidden')) {
+                chatInput.focus();
+            }
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatPanel.classList.add('hidden');
+            chatButton.classList.remove('hidden');
+        });
+
+        chatMinimize.addEventListener('click', () => {
+            chatPanel.classList.add('hidden');
+            chatButton.classList.remove('hidden');
+        });
+
+        // Add message to chat
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'} mb-3`;
+            messageDiv.innerHTML = `
+                <div class="${isUser ? 'bg-primary-600 text-white' : 'bg-gray-700 text-gray-100'} rounded-2xl px-4 py-2 max-w-[85%] ${isUser ? 'rounded-br-md' : 'rounded-bl-md'}">
+                    <p class="text-sm whitespace-pre-wrap">${content}</p>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Show typing indicator
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typing-indicator';
+            typingDiv.className = 'flex justify-start mb-3';
+            typingDiv.innerHTML = `
+                <div class="bg-gray-700 rounded-2xl px-4 py-3 rounded-bl-md">
+                    <div class="flex space-x-1">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        // Send message
+        async function sendMessage(message) {
+            if (!message.trim() || isTyping) return;
+
+            const userMessage = message.trim();
+            chatInput.value = '';
+            addMessage(userMessage, true);
+
+            // Hide suggested questions after first message
+            document.getElementById('suggested-questions').classList.add('hidden');
+
+            isTyping = true;
+            chatSend.disabled = true;
+            showTyping();
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: userMessage,
+                        conversationHistory: conversationHistory
+                    })
+                });
+
+                const data = await response.json();
+
+                hideTyping();
+
+                if (data.error) {
+                    addMessage("Sorry, I encountered an error. Please try again.");
+                } else {
+                    addMessage(data.reply);
+                    conversationHistory.push(
+                        { role: 'user', content: userMessage },
+                        { role: 'assistant', content: data.reply }
+                    );
+                }
+            } catch (error) {
+                hideTyping();
+                addMessage("Sorry, I couldn't connect. Please try again.");
+            }
+
+            isTyping = false;
+            chatSend.disabled = false;
+            chatInput.focus();
+        }
+
+        // Event listeners
+        chatSend.addEventListener('click', () => sendMessage(chatInput.value));
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage(chatInput.value);
+            }
+        });
+
+        suggestedQuestions.forEach(btn => {
+            btn.addEventListener('click', () => {
+                sendMessage(btn.textContent);
             });
         });
 
