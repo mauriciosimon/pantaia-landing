@@ -25,6 +25,17 @@ Mauricio is an Industrial Engineer with a specialization in Innovation from Tecn
    - Results: 85% reduction in report generation time, 24/7 real-time monitoring
    - Built MCP (Model Context Protocol) architecture for AI-database integration
 
+3. Co-founder & Operations Lead — Pantera Software (2017-2019)
+   - Established operational processes for software development services company
+   - Managed vendor relationships matching client requirements with development teams
+   - Supervised Agile/Scrum delivery ensuring quality and timeline adherence
+
+4. Co-founder & Operations Manager — Grupo FRØ, Fintech (2015-2018)
+   - Built operational processes for crowdfunding platform in financial services sector
+   - Developed financial modeling and risk assessment frameworks
+   - Managed platform operations facilitating $1M+ USD in investments from 300+ micro investors
+   - Personally pitched investment projects to micro investors, building compelling narratives around financial models and market conditions to convince them to invest in local businesses
+
 **Key Projects:**
 
 1. Pakoa — Gamified MLM Sales Platform
@@ -57,6 +68,12 @@ Communication & People Leadership:
 - Experienced facilitating complex problem-solving processes across departments
 - Skilled at translating technical concepts for non-technical stakeholders (trained 120+ non-technical salespeople on complex systems)
 - Uses "what's in it for me" approach to drive adoption
+
+Sales, Pitching & Building Narratives:
+- Personally pitched crowdfunding investment projects to 300+ micro investors at Grupo FRØ
+- Skilled at crafting compelling narratives around financial models and market conditions
+- Convinced everyday people to invest their money in local businesses through clear, persuasive communication
+- Experience translating complex financial/technical information into accessible, trust-building stories
 
 Resilience & Long-term Thinking:
 - Sustained a 5-year transformation journey at OneContact Mexico
