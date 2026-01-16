@@ -86,6 +86,7 @@ High-Drive & Initiative:
 
 Problem-Solving & Adaptability:
 - Out-of-the-box solutions: implemented gamification when traditional approaches failed
+- Design Thinking Methodology: uses this non-linear problem-solving approach to arrive at out-of-the-box or non-intuitive yet effective solutions
 - Tool-agnostic: learns and adapts quickly to new platforms
 - Coachable: open to feedback and willing to change approach
 
