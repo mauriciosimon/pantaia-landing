@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mauricio Simon | AI & Business Intelligence Portfolio</title>
-    <meta name="description" content="Industrial Engineer specialized in AI-powered solutions, data visualization, and business transformation. Based in Dubai, UAE.">
+    <title>Mauricio Simon | Founder, Majlis.social</title>
+    <meta name="description" content="Founder of Majlis.social — pioneering agent-to-agent economic infrastructure from Dubai. Designer of alignment systems for decentralized economies.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2314b8a6'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23grad)'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='Inter, sans-serif'%3EMS%3C/text%3E%3C/svg%3E">
     <script>
         tailwind.config = {
@@ -44,8 +43,10 @@
                             900: '#1e3a8a',
                         },
                         dark: {
+                            700: '#232838',
                             800: '#1a1f2e',
                             900: '#0f1219',
+                            950: '#0a0d14',
                         }
                     }
                 }
@@ -53,15 +54,14 @@
         }
     </script>
     <style>
-        /* Custom animations */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-16px); }
         }
 
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(20, 184, 166, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(20, 184, 166, 0.6); }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes gradient-shift {
@@ -70,329 +70,173 @@
             100% { background-position: 0% 50%; }
         }
 
-        @keyframes fade-in-up {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .fade-in-up { animation: fade-in-up 0.7s ease-out forwards; }
+        .animate-gradient { background-size: 200% 200%; animation: gradient-shift 8s ease infinite; }
 
-        @keyframes scale-in {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-pulse-glow {
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        .animate-gradient {
-            background-size: 200% 200%;
-            animation: gradient-shift 8s ease infinite;
-        }
-
-        .fade-in-up {
-            animation: fade-in-up 0.8s ease-out forwards;
-        }
-
-        .scale-in {
-            animation: scale-in 0.6s ease-out forwards;
-        }
-
-        /* Intersection Observer animations */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal-scale.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Gradient backgrounds */
-        .gradient-bg {
-            background: linear-gradient(135deg, #0f1219 0%, #1a1f2e 50%, #0f766e 100%);
-        }
-
         .gradient-text {
-            background: linear-gradient(135deg, #14b8a6 0%, #3b82f6 50%, #2dd4bf 100%);
+            background: linear-gradient(135deg, #14b8a6 0%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .gradient-border {
-            position: relative;
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(59, 130, 246, 0.1));
-            border-radius: 1rem;
-        }
-
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 1rem;
-            padding: 1px;
-            background: linear-gradient(135deg, #14b8a6, #3b82f6);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-
-        /* Glass effect */
         .glass {
-            background: rgba(26, 31, 46, 0.7);
+            background: rgba(26, 31, 46, 0.6);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+        html { scroll-behavior: smooth; }
 
-        ::-webkit-scrollbar-track {
-            background: #0f1219;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0f1219; }
+        ::-webkit-scrollbar-thumb { background: #14b8a6; border-radius: 3px; }
 
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #14b8a6, #0d9488);
-            border-radius: 4px;
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Grid pattern overlay */
-        .grid-pattern {
-            background-image:
-                linear-gradient(rgba(20, 184, 166, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(20, 184, 166, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        /* Glow effects */
-        .glow-teal {
-            box-shadow: 0 0 60px rgba(20, 184, 166, 0.3);
-        }
-
-        .glow-blue {
-            box-shadow: 0 0 60px rgba(59, 130, 246, 0.3);
-        }
-
-        /* Card hover effects */
         .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(20, 184, 166, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(20, 184, 166, 0.15);
         }
 
-        /* Button styles */
         .btn-primary {
             background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
             transition: all 0.3s ease;
         }
-
         .btn-primary:hover {
             background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(20, 184, 166, 0.4);
+            box-shadow: 0 8px 32px rgba(20, 184, 166, 0.3);
         }
 
         .btn-secondary {
-            border: 1px solid rgba(20, 184, 166, 0.5);
+            border: 1px solid rgba(20, 184, 166, 0.4);
             transition: all 0.3s ease;
         }
-
         .btn-secondary:hover {
-            background: rgba(20, 184, 166, 0.1);
+            background: rgba(20, 184, 166, 0.08);
             border-color: #14b8a6;
         }
 
-        /* Navbar blur on scroll */
         .nav-blur {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
 
-        /* Honeycomb pattern for Pakoa section */
-        .honeycomb-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2314b8a6' fill-opacity='0.1'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        .border-subtle { border-color: rgba(255,255,255,0.06); }
+
+        /* Chat styles */
+        .chat-container {
+            max-height: 400px;
+            overflow-y: auto;
         }
+        .chat-container::-webkit-scrollbar { width: 4px; }
+        .chat-container::-webkit-scrollbar-thumb { background: rgba(20,184,166,0.3); border-radius: 2px; }
     </style>
 </head>
-<body class="bg-dark-900 text-white font-sans antialiased overflow-x-hidden">
+<body class="bg-dark-950 text-white font-sans antialiased overflow-x-hidden">
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
                 <a href="#" class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                        <span class="text-white font-bold text-lg">MS</span>
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">MS</span>
                     </div>
-                    <span class="text-xl font-bold gradient-text">Mauricio Simon</span>
+                    <span class="text-lg font-semibold text-white">Mauricio Simon</span>
                 </a>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-300 hover:text-primary-400 transition-colors">About</a>
-                    <a href="#projects" class="text-gray-300 hover:text-primary-400 transition-colors">Projects</a>
-                    <a href="#skills" class="text-gray-300 hover:text-primary-400 transition-colors">Skills</a>
-                    <a href="#experience" class="text-gray-300 hover:text-primary-400 transition-colors">Experience</a>
-                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full font-medium text-white">
-                        Contact
-                    </a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors text-sm">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition-colors text-sm">Projects</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors text-sm">Skills</a>
+                    <a href="#experience" class="text-gray-400 hover:text-white transition-colors text-sm">Experience</a>
+                    <a href="#contact" class="btn-primary px-5 py-2 rounded-full font-medium text-white text-sm">Contact</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-dark-800 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-subtle">
             <div class="px-4 py-4 space-y-3">
-                <a href="#about" class="block py-2 text-gray-300 hover:text-primary-400 transition-colors">About</a>
-                <a href="#projects" class="block py-2 text-gray-300 hover:text-primary-400 transition-colors">Projects</a>
-                <a href="#skills" class="block py-2 text-gray-300 hover:text-primary-400 transition-colors">Skills</a>
-                <a href="#experience" class="block py-2 text-gray-300 hover:text-primary-400 transition-colors">Experience</a>
-                <a href="#contact" class="block btn-primary px-6 py-2.5 rounded-full font-medium text-white text-center mt-4">
-                    Contact
-                </a>
+                <a href="#about" class="block py-2 text-gray-400 hover:text-white transition-colors text-sm">About</a>
+                <a href="#projects" class="block py-2 text-gray-400 hover:text-white transition-colors text-sm">Projects</a>
+                <a href="#skills" class="block py-2 text-gray-400 hover:text-white transition-colors text-sm">Skills</a>
+                <a href="#experience" class="block py-2 text-gray-400 hover:text-white transition-colors text-sm">Experience</a>
+                <a href="#contact" class="block btn-primary px-5 py-2 rounded-full font-medium text-white text-center text-sm mt-4">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center gradient-bg grid-pattern overflow-hidden">
-        <!-- Animated background elements -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-950">
+        <!-- Subtle background -->
         <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent-500/20 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary-500/[0.07] rounded-full blur-[120px] animate-float"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-accent-500/[0.05] rounded-full blur-[120px] animate-float" style="animation-delay: -3s;"></div>
         </div>
 
-        <!-- Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
             <div class="text-center">
-                <!-- Location Badge -->
-                <div class="inline-flex items-center px-4 py-2 rounded-full glass border border-primary-500/30 mb-8 fade-in-up">
-                    <svg class="w-4 h-4 text-primary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                    <span class="text-sm text-primary-300">Based in Dubai, UAE</span>
+                <!-- Badge -->
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-primary-500/20 bg-primary-500/[0.05] mb-10 fade-in-up">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary-400 mr-2"></span>
+                    <span class="text-sm text-primary-300">Building from Dubai</span>
                 </div>
 
                 <!-- Headline -->
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 fade-in-up" style="animation-delay: 0.1s;">
-                    <span class="text-white">Hi, I'm</span> <span class="gradient-text animate-gradient">Mauricio</span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] mb-6 fade-in-up" style="animation-delay: 0.1s;">
+                    <span class="text-white">I'm Mauricio.</span><br>
+                    <span class="gradient-text animate-gradient">Founder of Majlis.social</span>
                 </h1>
 
                 <!-- Subheadline -->
-                <p class="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto mb-6 fade-in-up" style="animation-delay: 0.15s;">
-                    I build AI-powered solutions that transform business operations
+                <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-6 fade-in-up leading-relaxed" style="animation-delay: 0.15s;">
+                    Pioneering agent-to-agent economic infrastructure.
                 </p>
 
-                <!-- Bio -->
-                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 fade-in-up" style="animation-delay: 0.2s;">
-                    Industrial Engineer specialized in innovation, with 5+ years leading technology-driven transformations. I design systems that combine <span class="text-primary-400">data visualization</span>, <span class="text-accent-400">automation</span>, and <span class="text-primary-400">AI</span> to solve real operational problems.
+                <!-- Description -->
+                <p class="text-base md:text-lg text-gray-500 max-w-2xl mx-auto mb-12 fade-in-up leading-relaxed" style="animation-delay: 0.2s;">
+                    I design alignment systems for decentralized economies. Majlis is an AI-first networking platform where AI representatives connect people based on mission alignment and calibrated quality standards &mdash; before humans spend time.
                 </p>
 
-                <!-- CTA Buttons -->
+                <!-- CTA -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up" style="animation-delay: 0.3s;">
-                    <a href="#projects" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg flex items-center space-x-2">
-                        <span>View My Work</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <a href="#about" class="btn-primary px-8 py-3.5 rounded-full font-medium text-base flex items-center space-x-2">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                         </svg>
                     </a>
-                    <a href="#contact" class="btn-secondary px-8 py-4 rounded-full font-semibold text-lg text-gray-300">
+                    <a href="#contact" class="btn-secondary px-8 py-3.5 rounded-full font-medium text-base text-gray-300">
                         Get in Touch
                     </a>
-                </div>
-
-                <!-- Tech Stack -->
-                <div class="mt-16 fade-in-up" style="animation-delay: 0.4s;">
-                    <p class="text-sm text-gray-500 mb-6 uppercase tracking-wider">Technologies I Work With</p>
-                    <div class="flex flex-wrap items-center justify-center gap-8 opacity-60">
-                        <div class="flex items-center space-x-2 text-gray-400">
-                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
-                            <span class="font-medium">Odoo</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-gray-400">
-                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                                <rect x="3" y="3" width="7" height="7" rx="1"/>
-                                <rect x="14" y="3" width="7" height="7" rx="1"/>
-                                <rect x="3" y="14" width="7" height="7" rx="1"/>
-                                <rect x="14" y="14" width="7" height="7" rx="1"/>
-                            </svg>
-                            <span class="font-medium">Power BI</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-gray-400">
-                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            </svg>
-                            <span class="font-medium">Claude API</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-gray-400">
-                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
-                            </svg>
-                            <span class="font-medium">React</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Scroll indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in-up" style="animation-delay: 0.5s;">
-            <a href="#about" class="flex flex-col items-center text-gray-500 hover:text-primary-400 transition-colors">
-                <span class="text-sm mb-2">Scroll to explore</span>
-                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="#about" class="flex flex-col items-center text-gray-600 hover:text-primary-400 transition-colors">
+                <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
                 </svg>
             </a>
@@ -401,61 +245,60 @@
 
     <!-- About Section -->
     <section id="about" class="relative py-24 lg:py-32 bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Professional Photo -->
-                <div class="reveal-scale order-2 lg:order-1">
+                <!-- Photo -->
+                <div class="reveal order-2 lg:order-1">
                     <div class="relative">
-                        <div class="gradient-border p-1 glow-teal">
-                            <div class="bg-dark-800 rounded-xl p-6 flex items-center justify-center">
-                                <img
-                                    src="profile.png"
-                                    alt="Mauricio Simon - AI & Business Intelligence Professional"
-                                    class="w-full max-w-md rounded-lg"
-                                >
-                            </div>
+                        <div class="rounded-2xl border border-white/[0.06] bg-dark-800 p-6 flex items-center justify-center">
+                            <img
+                                src="profile.png"
+                                alt="Mauricio Simon — Founder, Majlis.social"
+                                class="w-full max-w-md rounded-xl"
+                            >
                         </div>
-                        <!-- Decorative elements -->
-                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-500/20 rounded-full blur-2xl"></div>
-                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-accent-500/20 rounded-full blur-2xl"></div>
+                        <div class="absolute -top-3 -right-3 w-20 h-20 bg-primary-500/10 rounded-full blur-2xl"></div>
+                        <div class="absolute -bottom-3 -left-3 w-24 h-24 bg-accent-500/10 rounded-full blur-2xl"></div>
                     </div>
                 </div>
 
-                <!-- About Content -->
+                <!-- Content -->
                 <div class="order-1 lg:order-2">
                     <div class="reveal">
-                        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-4">
+                        <span class="inline-block px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-6">
                             About Me
                         </span>
-                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                            Building Systems That <span class="gradient-text">Actually Work</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                            Designer of Alignment Systems for <span class="gradient-text">Decentralized Economies</span>
                         </h2>
 
-                        <div class="space-y-4 text-gray-400 text-lg mb-8">
+                        <div class="space-y-5 text-gray-400 text-base leading-relaxed mb-8">
                             <p>
-                                I'm an Industrial Engineer with a passion for using technology to solve real business problems. Over the past 5+ years, I've led teams, built products, and transformed operations for companies in Latin America.
+                                I've spent most of my entrepreneurial career building network-driven systems and learning where incentive alignment breaks.
                             </p>
                             <p>
-                                I help businesses leverage <span class="text-primary-400">AI</span>, <span class="text-accent-400">automation</span>, and <span class="text-primary-400">data visualization</span> to solve operational challenges. My approach is simple: understand the problem deeply, then build the simplest solution that works.
+                                At 22, I built a local crowdfunding ecosystem with <span class="text-white">300+ investors</span> deploying over <span class="text-white">$1M</span> into restaurants and events. It successfully activated a community-driven entrepreneurial ecosystem &mdash; and taught me that even when traction is strong, systems fail if incentives aren't structurally aligned.
                             </p>
                             <p>
-                                Currently seeking opportunities in <span class="text-white">AI implementation</span>, <span class="text-white">business intelligence</span>, and <span class="text-white">solutions consulting</span>.
+                                Later, as CEO of a telecom sales organization in Mexico, I designed a <span class="text-white">decentralized, gamified growth system</span> that scaled from 80 to 180+ employees. It worked because incentives were aligned correctly. It's still operating today.
+                            </p>
+                            <p>
+                                Now I'm building <span class="text-primary-400">Majlis.social</span> &mdash; using AI agents to create structured mission alignment and quality matching before humans invest time or capital. Launching from Dubai to pioneer agent-to-agent economic infrastructure.
                             </p>
                         </div>
 
-                        <!-- Trait Badges -->
-                        <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 rounded-full bg-dark-800 border border-primary-500/30 text-primary-300 text-sm font-medium">
-                                Tool-Agnostic
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 rounded-full bg-dark-800 border border-white/[0.06] text-gray-300 text-sm">
+                                Systems Thinker
                             </span>
-                            <span class="px-4 py-2 rounded-full bg-dark-800 border border-accent-500/30 text-accent-300 text-sm font-medium">
-                                Outcome-Focused
+                            <span class="px-3 py-1.5 rounded-full bg-dark-800 border border-white/[0.06] text-gray-300 text-sm">
+                                Incentive Design
                             </span>
-                            <span class="px-4 py-2 rounded-full bg-dark-800 border border-primary-500/30 text-primary-300 text-sm font-medium">
-                                Hands-On Builder
+                            <span class="px-3 py-1.5 rounded-full bg-dark-800 border border-white/[0.06] text-gray-300 text-sm">
+                                AI-First Builder
                             </span>
-                            <span class="px-4 py-2 rounded-full bg-dark-800 border border-accent-500/30 text-accent-300 text-sm font-medium">
-                                Bilingual (ES/EN)
+                            <span class="px-3 py-1.5 rounded-full bg-dark-800 border border-white/[0.06] text-gray-300 text-sm">
+                                Dubai-Based
                             </span>
                         </div>
                     </div>
@@ -465,322 +308,202 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="relative py-24 lg:py-32 bg-dark-800/50">
-        <!-- Background decoration -->
-        <div class="absolute inset-0 grid-pattern opacity-50"></div>
-        <div class="absolute top-0 left-0 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl"></div>
-
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" class="relative py-24 lg:py-32 bg-dark-950">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16 reveal">
-                <span class="inline-block px-4 py-1.5 rounded-full bg-accent-500/10 text-accent-400 text-sm font-medium mb-4">
-                    My Work
+                <span class="inline-block px-3 py-1 rounded-full bg-accent-500/10 text-accent-400 text-sm font-medium mb-4">
+                    Projects
                 </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                    Featured <span class="gradient-text">Projects</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    What I'm <span class="gradient-text">Building</span>
                 </h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-                    Selected projects showcasing my experience in AI integration, data systems, and operational transformation.
+                <p class="text-lg text-gray-500 max-w-xl mx-auto">
+                    From crowdfunded ecosystems to AI-mediated alignment infrastructure.
                 </p>
             </div>
 
-            <!-- Project 1: Pakoa -->
-            <div class="mb-20 reveal">
-                <div class="gradient-border glow-teal">
-                    <div class="bg-dark-900/90 rounded-xl p-8 md:p-12">
-                        <div class="grid lg:grid-cols-2 gap-12 items-start">
-                            <!-- Project Info -->
-                            <div>
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-400 text-sm font-medium">
-                                        Featured Project
-                                    </span>
-                                    <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium">
-                                        CEO & System Designer
-                                    </span>
-                                </div>
-
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
-                                    Pakoa
-                                </h3>
-                                <p class="text-xl text-gray-300 mb-6">
-                                    Gamified MLM Platform that Scaled a Business 4x
-                                </p>
-
-                                <div class="space-y-6 text-gray-400">
-                                    <div>
-                                        <h4 class="text-white font-semibold mb-2">The Context</h4>
-                                        <p>As CEO of OneContact Mexico, a telecom contact center, I faced a crisis: high turnover, flat growth, and a young workforce (18-24) that wasn't engaged. Traditional management wasn't working.</p>
-                                    </div>
-
-                                    <div>
-                                        <h4 class="text-white font-semibold mb-2">What I Built</h4>
-                                        <p>I designed and led the development of Pakoa, a gamified multi-level marketing platform that transformed how we managed sales teams. The system gave employees visibility into their progress, clear advancement paths, and motivation structures tailored to their demographic.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Key Features -->
-                                <div class="mt-6">
-                                    <h4 class="text-white font-semibold mb-3">Key Features</h4>
-                                    <ul class="space-y-2">
-                                        <li class="flex items-start space-x-2 text-gray-300">
-                                            <svg class="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                            </svg>
-                                            <span><strong class="text-primary-300">Honeycomb visualization</strong> — each salesperson's community tree (up to 259 slots)</span>
-                                        </li>
-                                        <li class="flex items-start space-x-2 text-gray-300">
-                                            <svg class="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                            </svg>
-                                            <span><strong class="text-primary-300">Real-time sales dashboard</strong> — funnel tracking (Prospecto → Cotizado → Agendado → Instalado)</span>
-                                        </li>
-                                        <li class="flex items-start space-x-2 text-gray-300">
-                                            <svg class="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                            </svg>
-                                            <span><strong class="text-primary-300">"Llave del Reino"</strong> — weekly threshold system ($15,000 in 30-day sales) unlocking commission chains</span>
-                                        </li>
-                                        <li class="flex items-start space-x-2 text-gray-300">
-                                            <svg class="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                            </svg>
-                                            <span><strong class="text-primary-300">Commission engine</strong> — 8% from direct reports, 12% from second level, 20% from third level</span>
-                                        </li>
-                                        <li class="flex items-start space-x-2 text-gray-300">
-                                            <svg class="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                            </svg>
-                                            <span><strong class="text-primary-300">AI Assistant</strong> — Claude API providing personalized coaching and recommendations</span>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <!-- Tech Stack -->
-                                <div class="mt-6 flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">React</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">TypeScript</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Tailwind</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Prisma</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">PostgreSQL</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Claude API</span>
-                                </div>
-
-                                <!-- CTA -->
-                                <div class="mt-8 relative z-10">
-                                    <a href="https://www.pakoa.com/en" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center px-6 py-3 rounded-full font-semibold">
-                                        <span>Visit Website</span>
-                                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                        </svg>
-                                    </a>
-                                </div>
+            <!-- Project 1: Majlis.social (PRIMARY) -->
+            <div class="mb-12 reveal">
+                <div class="rounded-2xl border border-primary-500/20 bg-dark-900 p-8 md:p-10">
+                    <div class="grid lg:grid-cols-2 gap-10 items-start">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-primary-500/15 text-primary-400 text-sm font-medium">
+                                    Current Focus
+                                </span>
+                                <span class="px-3 py-1 rounded-full bg-green-500/15 text-green-400 text-sm font-medium">
+                                    Founder
+                                </span>
                             </div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Majlis.social</h3>
+                            <p class="text-gray-400 text-base leading-relaxed mb-6">
+                                An AI-first networking platform where AI representatives speak to each other first, filtering for mission alignment and calibrated quality standards before humans invest time. Open to the ecosystem, intelligently filtered.
+                            </p>
 
-                            <!-- Results & Visual -->
-                            <div class="space-y-8">
-                                <!-- Results Cards -->
-                                <div>
-                                    <h4 class="text-white font-semibold mb-4">Business Results</h4>
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div class="bg-dark-800/50 rounded-xl p-4 border border-white/5">
-                                            <p class="text-3xl font-bold text-primary-400">80→180+</p>
-                                            <p class="text-sm text-gray-400">Team scaled in 3 years</p>
-                                        </div>
-                                        <div class="bg-dark-800/50 rounded-xl p-4 border border-white/5">
-                                            <p class="text-3xl font-bold text-green-400">4x</p>
-                                            <p class="text-sm text-gray-400">Profit growth</p>
-                                        </div>
-                                        <div class="bg-dark-800/50 rounded-xl p-4 border border-white/5">
-                                            <p class="text-3xl font-bold text-accent-400">50%</p>
-                                            <p class="text-sm text-gray-400">Turnover reduction</p>
-                                        </div>
-                                        <div class="bg-dark-800/50 rounded-xl p-4 border border-white/5">
-                                            <p class="text-3xl font-bold text-primary-400">Self-Sustaining</p>
-                                            <p class="text-sm text-gray-400">Growth engine created</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Dashboard Screenshot -->
-                                <div class="relative gradient-border p-1">
-                                    <div class="bg-dark-800 rounded-xl p-2">
-                                        <img
-                                            src="Pakoa v2 screenshot.png"
-                                            alt="Pakoa Dashboard - Gamified MLM Platform"
-                                            class="w-full rounded-lg shadow-lg"
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2: OneContact Colombia -->
-            <div class="mb-20 reveal" style="transition-delay: 0.2s;">
-                <div class="gradient-border glow-blue">
-                    <div class="bg-dark-900/90 rounded-xl p-8 md:p-12">
-                        <div class="grid lg:grid-cols-2 gap-12 items-center">
-                            <!-- Dashboard Preview -->
-                            <div class="order-2 lg:order-1">
-                                <div class="relative gradient-border p-1">
-                                    <div class="bg-dark-800 rounded-xl p-4">
-                                        <!-- Mock Dashboard -->
-                                        <div class="aspect-video bg-gradient-to-br from-dark-900 to-dark-800 rounded-lg overflow-hidden relative">
-                                            <!-- Dashboard Header -->
-                                            <div class="flex items-center justify-between p-4 border-b border-white/5">
-                                                <div class="flex items-center space-x-3">
-                                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                                </div>
-                                                <span class="text-xs text-gray-500">Power BI Dashboard</span>
-                                            </div>
-
-                                            <!-- Dashboard Content -->
-                                            <div class="p-4 grid grid-cols-3 gap-3">
-                                                <!-- KPI Cards -->
-                                                <div class="bg-dark-800/50 rounded-lg p-3 border border-white/5">
-                                                    <p class="text-xs text-gray-500 mb-1">Llamadas Hoy</p>
-                                                    <p class="text-2xl font-bold text-primary-400">2,847</p>
-                                                    <p class="text-xs text-green-400">+12.5%</p>
-                                                </div>
-                                                <div class="bg-dark-800/50 rounded-lg p-3 border border-white/5">
-                                                    <p class="text-xs text-gray-500 mb-1">Tiempo Promedio</p>
-                                                    <p class="text-2xl font-bold text-accent-400">4:32</p>
-                                                    <p class="text-xs text-green-400">-8.2%</p>
-                                                </div>
-                                                <div class="bg-dark-800/50 rounded-lg p-3 border border-white/5">
-                                                    <p class="text-xs text-gray-500 mb-1">Satisfacción</p>
-                                                    <p class="text-2xl font-bold text-primary-400">94%</p>
-                                                    <p class="text-xs text-green-400">+3.1%</p>
-                                                </div>
-
-                                                <!-- Chart Area -->
-                                                <div class="col-span-2 bg-dark-800/50 rounded-lg p-3 border border-white/5">
-                                                    <p class="text-xs text-gray-500 mb-2">Volumen de Llamadas por Hora</p>
-                                                    <div class="flex items-end justify-between h-20 gap-1">
-                                                        <div class="w-full bg-primary-500/30 rounded-t" style="height: 40%"></div>
-                                                        <div class="w-full bg-primary-500/40 rounded-t" style="height: 60%"></div>
-                                                        <div class="w-full bg-primary-500/50 rounded-t" style="height: 80%"></div>
-                                                        <div class="w-full bg-primary-500 rounded-t" style="height: 100%"></div>
-                                                        <div class="w-full bg-primary-500/80 rounded-t" style="height: 90%"></div>
-                                                        <div class="w-full bg-primary-500/60 rounded-t" style="height: 70%"></div>
-                                                        <div class="w-full bg-primary-500/40 rounded-t" style="height: 50%"></div>
-                                                        <div class="w-full bg-primary-500/30 rounded-t" style="height: 35%"></div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- AI Insight -->
-                                                <div class="bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-lg p-3 border border-primary-500/30">
-                                                    <div class="flex items-center space-x-2 mb-2">
-                                                        <svg class="w-4 h-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                                        </svg>
-                                                        <span class="text-xs text-primary-400 font-medium">AI Insight</span>
-                                                    </div>
-                                                    <p class="text-xs text-gray-300 leading-relaxed">Pico detectado a las 14:00. Sugerencia: agregar 2 agentes.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project Info -->
-                            <div class="order-1 lg:order-2">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class="px-3 py-1 rounded-full bg-accent-500/20 text-accent-400 text-sm font-medium">
-                                        Solution Architect
-                                    </span>
-                                </div>
-
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
-                                    OneContact Colombia
-                                </h3>
-                                <p class="text-xl text-gray-300 mb-6">
-                                    AI-Integrated Analytics Platform
-                                </p>
-
-                                <p class="text-gray-400 mb-6">
-                                    Built an AI-powered business intelligence system connecting Odoo ERP with Power BI, enabling natural language queries for real-time insights. The platform serves a telecommunications contact center, providing managers with instant visibility into operations.
-                                </p>
-
-                                <!-- Results -->
-                                <div class="grid grid-cols-2 gap-4 mb-6">
-                                    <div class="bg-dark-800/50 rounded-xl p-4 border border-white/5">
-                                        <p class="text-3xl font-bold text-primary-400">85%</p>
-                                        <p class="text-sm text-gray-400">Reduction in report generation</p>
-                                    </div>
-                                    <div class="bg-dark-800/50 rounded-xl p-4 border border-white/5">
-                                        <p class="text-3xl font-bold text-green-400">24/7</p>
-                                        <p class="text-sm text-gray-400">Real-time monitoring</p>
-                                    </div>
-                                    <div class="bg-dark-800/50 rounded-xl p-4 border border-white/5">
-                                        <p class="text-3xl font-bold text-accent-400">100%</p>
-                                        <p class="text-sm text-gray-400">Spanish-language AI insights</p>
-                                    </div>
-                                    <div class="bg-dark-800/50 rounded-xl p-4 border border-white/5">
-                                        <p class="text-3xl font-bold text-primary-400">3x</p>
-                                        <p class="text-sm text-gray-400">Faster decision making</p>
-                                    </div>
-                                </div>
-
-                                <!-- Tech Stack -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Odoo</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Power BI</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Claude API</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">MCP Architecture</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Python</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: Conversational AI -->
-            <div class="reveal" style="transition-delay: 0.3s;">
-                <div class="gradient-border">
-                    <div class="bg-dark-900/90 rounded-xl p-8 md:p-12">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-3 mb-4">
-                                    <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-400 text-sm font-medium">
-                                        Designer & Developer
-                                    </span>
-                                </div>
-
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
-                                    Multi-tenant Sales AI
-                                </h3>
-                                <p class="text-xl text-gray-300 mb-4">
-                                    Conversational AI Platform
-                                </p>
-
-                                <p class="text-gray-400 mb-6 max-w-2xl">
-                                    Conversational AI platform for sales automation with multiple AI agent personalities and social media integration. Enables businesses to deploy intelligent sales assistants across WhatsApp and Facebook Messenger.
-                                </p>
-
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Claude API</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Facebook Messenger</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Google OAuth</span>
-                                    <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-300 text-sm border border-white/10">Node.js</span>
-                                </div>
-                            </div>
-
-                            <div class="mt-6 md:mt-0 md:ml-8">
-                                <div class="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary-500/20 to-accent-500/20 flex items-center justify-center border border-primary-500/30">
-                                    <svg class="w-16 h-16 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                     </svg>
+                                    <span class="text-gray-300 text-sm">Agent-to-agent conversations with persistent memory architecture</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    <span class="text-gray-300 text-sm">Mission-based matching with mutual opt-in (Bumble-like logic)</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    <span class="text-gray-300 text-sm">Revenue sharing for community builders &mdash; incentivized quality curation</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    <span class="text-gray-300 text-sm">Conversation rating system for signal validation</span>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    <span class="text-gray-300 text-sm">Launching from Dubai with government endorsement strategy</span>
                                 </div>
                             </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">React</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">TypeScript</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Node.js</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">PostgreSQL</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Claude API</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">A2A Protocol</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">MCP</span>
+                            </div>
+
+                            <a href="https://majlis.social" target="_blank" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium">
+                                Visit majlis.social
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Vision card -->
+                        <div class="space-y-6">
+                            <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
+                                <h4 class="text-sm font-semibold text-primary-400 uppercase tracking-wider mb-3">The Vision</h4>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    "Imagine if every founder or investor landing in Dubai instantly had an AI representative connecting them only to the most aligned opportunities. That's Majlis &mdash; an AI-first national networking layer."
+                                </p>
+                            </div>
+                            <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
+                                <h4 class="text-sm font-semibold text-accent-400 uppercase tracking-wider mb-3">The Problem</h4>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Founders and family office investors spend enormous time and money networking &mdash; traveling to conferences, taking meetings &mdash; yet only 1 in 20 conversations is actually relevant. It's not just inefficiency. It's strategic uncertainty: "Am I even in the right rooms?"
+                                </p>
+                            </div>
+                            <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
+                                <h4 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">New Category</h4>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Majlis pioneers a new category: agent-to-agent networking. This doesn't exist in the market. We're not improving networking &mdash; we're pre-processing it through intelligence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Pakoa (reframed) -->
+            <div class="mb-12 reveal">
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-8 md:p-10">
+                    <div class="grid lg:grid-cols-2 gap-10 items-start">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06]">
+                                    Decentralized Growth System
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Pakoa</h3>
+                            <p class="text-gray-400 text-base leading-relaxed mb-6">
+                                A gamified, decentralized growth platform that transformed a struggling contact center into a scalable operation. Designed the incentive architecture that aligned individual performance with network growth &mdash; the structural precursor to Majlis's alignment thinking.
+                            </p>
+
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-4">
+                                    <div class="text-2xl font-bold text-white">80 &rarr; 180+</div>
+                                    <div class="text-sm text-gray-500">Team scaled</div>
+                                </div>
+                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-4">
+                                    <div class="text-2xl font-bold text-white">4x</div>
+                                    <div class="text-sm text-gray-500">Profit growth</div>
+                                </div>
+                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-4">
+                                    <div class="text-2xl font-bold text-white">50%</div>
+                                    <div class="text-sm text-gray-500">Turnover reduced</div>
+                                </div>
+                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-4">
+                                    <div class="text-2xl font-bold text-white">5 yrs</div>
+                                    <div class="text-sm text-gray-500">Sustained growth</div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">React</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">TypeScript</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Prisma</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">PostgreSQL</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Claude API</span>
+                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Gamification</span>
+                            </div>
+
+                            <a href="https://www.pakoa.com/en" target="_blank" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium">
+                                Visit pakoa.com
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div>
+                            <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
+                                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Structural Insight</h4>
+                                <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                    Pakoa proved that when incentives are aligned correctly, decentralized networks scale. Multi-level commission structures, honeycomb community visualization, and real-time performance dashboards created a self-sustaining growth engine.
+                                </p>
+                                <p class="text-gray-400 text-sm leading-relaxed">
+                                    This experience directly shaped the incentive design philosophy behind Majlis: revenue sharing for community builders who curate high-quality networks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: OneContact Colombia (brief) -->
+            <div class="reveal">
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-8 md:p-10">
+                    <div class="flex flex-col md:flex-row md:items-center gap-6">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06]">
+                                    AI Integration
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">OneContact Colombia</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Built an AI-integrated analytics platform connecting Odoo ERP with Power BI, enabling natural language queries via Claude API. Achieved 85% reduction in report generation time with 24/7 real-time monitoring. MCP architecture for AI-database integration.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 md:w-48 shrink-0">
+                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Odoo</span>
+                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Power BI</span>
+                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Claude API</span>
+                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">MCP</span>
+                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Python</span>
                         </div>
                     </div>
                 </div>
@@ -790,932 +513,499 @@
 
     <!-- Skills Section -->
     <section id="skills" class="relative py-24 lg:py-32 bg-dark-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <span class="inline-block px-4 py-1.5 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-4">
-                    Skills & Tools
+                <span class="inline-block px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-4">
+                    Capabilities
                 </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                    What I <span class="gradient-text">Work With</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Skills & <span class="gradient-text">Tools</span>
                 </h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-                    I'm tool-agnostic — I focus on solving the problem with whatever works best.
-                </p>
             </div>
 
-            <!-- Skills Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- CRM & ERP -->
-                <div class="reveal-scale" style="transition-delay: 0.1s;">
-                    <div class="gradient-border h-full">
-                        <div class="bg-dark-800/90 rounded-xl p-6 h-full">
-                            <div class="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">CRM & ERP</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>Odoo</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>HubSpot</span>
-                                </li>
-                            </ul>
-                        </div>
+                <!-- AI / Agents -->
+                <div class="reveal rounded-xl bg-dark-800 border border-white/[0.06] p-6 card-hover">
+                    <div class="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
                     </div>
+                    <h3 class="text-base font-semibold text-white mb-3">AI & Agents</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Claude API</li>
+                        <li>Agent-to-agent architecture</li>
+                        <li>Persistent memory systems</li>
+                        <li>MCP (Model Context Protocol)</li>
+                        <li>Multi-agent orchestration</li>
+                    </ul>
                 </div>
 
-                <!-- Data & Analytics -->
-                <div class="reveal-scale" style="transition-delay: 0.15s;">
-                    <div class="gradient-border h-full">
-                        <div class="bg-dark-800/90 rounded-xl p-6 h-full">
-                            <div class="w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">Data & Analytics</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>Power BI</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>SQL / PostgreSQL</span>
-                                </li>
-                            </ul>
-                        </div>
+                <!-- Platform -->
+                <div class="reveal rounded-xl bg-dark-800 border border-white/[0.06] p-6 card-hover" style="transition-delay: 0.1s;">
+                    <div class="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
                     </div>
+                    <h3 class="text-base font-semibold text-white mb-3">Platform</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>React / TypeScript</li>
+                        <li>Node.js</li>
+                        <li>PostgreSQL / Prisma</li>
+                        <li>Tailwind CSS</li>
+                        <li>Vercel / DigitalOcean</li>
+                    </ul>
                 </div>
 
-                <!-- Automation -->
-                <div class="reveal-scale" style="transition-delay: 0.2s;">
-                    <div class="gradient-border h-full">
-                        <div class="bg-dark-800/90 rounded-xl p-6 h-full">
-                            <div class="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">Automation</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>n8n</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>Zapier / Make</span>
-                                </li>
-                            </ul>
-                        </div>
+                <!-- Systems -->
+                <div class="reveal rounded-xl bg-dark-800 border border-white/[0.06] p-6 card-hover" style="transition-delay: 0.2s;">
+                    <div class="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                        </svg>
                     </div>
+                    <h3 class="text-base font-semibold text-white mb-3">Systems Design</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Incentive design</li>
+                        <li>Network effects</li>
+                        <li>Decentralized coordination</li>
+                        <li>Gamification architecture</li>
+                        <li>Data visualization (Power BI)</li>
+                    </ul>
                 </div>
 
-                <!-- AI & LLMs -->
-                <div class="reveal-scale" style="transition-delay: 0.25s;">
-                    <div class="gradient-border h-full">
-                        <div class="bg-dark-800/90 rounded-xl p-6 h-full">
-                            <div class="w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">AI & LLMs</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>Claude API</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>OpenAI</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>MCP (Model Context Protocol)</span>
-                                </li>
-                            </ul>
-                        </div>
+                <!-- Business -->
+                <div class="reveal rounded-xl bg-dark-800 border border-white/[0.06] p-6 card-hover" style="transition-delay: 0.3s;">
+                    <div class="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                        </svg>
                     </div>
-                </div>
-
-                <!-- Development -->
-                <div class="reveal-scale" style="transition-delay: 0.3s;">
-                    <div class="gradient-border h-full">
-                        <div class="bg-dark-800/90 rounded-xl p-6 h-full">
-                            <div class="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">Development</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>React / TypeScript</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>Python</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>Node.js</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Management -->
-                <div class="reveal-scale" style="transition-delay: 0.35s;">
-                    <div class="gradient-border h-full">
-                        <div class="bg-dark-800/90 rounded-xl p-6 h-full">
-                            <div class="w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">Project Management</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>Atlassian (Jira)</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>Notion</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Marketing & Analytics -->
-                <div class="reveal-scale" style="transition-delay: 0.4s;">
-                    <div class="gradient-border h-full">
-                        <div class="bg-dark-800/90 rounded-xl p-6 h-full">
-                            <div class="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">Marketing & Analytics</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>Meta Business Suite</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-primary-400 rounded-full"></span>
-                                    <span>Google Analytics</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cloud & DevOps -->
-                <div class="reveal-scale" style="transition-delay: 0.45s;">
-                    <div class="gradient-border h-full">
-                        <div class="bg-dark-800/90 rounded-xl p-6 h-full">
-                            <div class="w-12 h-12 rounded-xl bg-accent-500/20 flex items-center justify-center mb-4">
-                                <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-white mb-3">Cloud & DevOps</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>Vercel / Railway</span>
-                                </li>
-                                <li class="flex items-center space-x-2 text-gray-300">
-                                    <span class="w-1.5 h-1.5 bg-accent-400 rounded-full"></span>
-                                    <span>Git / GitHub</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <h3 class="text-base font-semibold text-white mb-3">Business</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Ecosystem building</li>
+                        <li>Government relations</li>
+                        <li>Startup strategy</li>
+                        <li>Team scaling (80 &rarr; 180+)</li>
+                        <li>Bilingual (ES/EN)</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="relative py-24 lg:py-32 bg-dark-800/50">
-        <!-- Background decoration -->
-        <div class="absolute inset-0 grid-pattern opacity-50"></div>
-
-        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
+    <section id="experience" class="relative py-24 lg:py-32 bg-dark-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <span class="inline-block px-4 py-1.5 rounded-full bg-accent-500/10 text-accent-400 text-sm font-medium mb-4">
-                    Experience
+                <span class="inline-block px-3 py-1 rounded-full bg-accent-500/10 text-accent-400 text-sm font-medium mb-4">
+                    Journey
                 </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                    My <span class="gradient-text">Journey</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Experience <span class="gradient-text">Timeline</span>
                 </h2>
+                <p class="text-base text-gray-500 max-w-lg mx-auto">
+                    From crowdfunding ecosystems to AI-mediated alignment infrastructure.
+                </p>
             </div>
 
-            <!-- Timeline -->
-            <div class="space-y-8">
-                <!-- Experience 1: Current -->
-                <div class="reveal" style="transition-delay: 0.1s;">
-                    <div class="gradient-border">
-                        <div class="bg-dark-900/90 rounded-xl p-6 md:p-8">
-                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                                <div>
-                                    <span class="inline-block px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium mb-3">
-                                        2024 - Present
-                                    </span>
-                                    <h3 class="text-xl md:text-2xl font-bold text-white mb-2">AI Solutions Consultant</h3>
-                                    <p class="text-gray-400">
-                                        Independent consulting for businesses implementing AI, automation, and BI solutions. Helping companies in Latin America and the Middle East leverage modern technology stacks.
-                                    </p>
-                                </div>
-                                <div class="flex items-center space-x-2 text-gray-500 md:flex-shrink-0">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                    </svg>
-                                    <span>Remote / Dubai</span>
-                                </div>
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/[0.06] md:transform md:-translate-x-px"></div>
+
+                <!-- Entry 1: Majlis -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-start md:justify-end md:w-1/2 md:pr-12">
+                        <div class="ml-12 md:ml-0">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-primary-500/15 text-primary-400 text-xs font-medium">2025 &mdash; Present</span>
                             </div>
+                            <h3 class="text-lg font-bold text-white mb-1">Founder &mdash; Majlis.social</h3>
+                            <p class="text-sm text-gray-500 mb-3">Dubai, UAE</p>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Pioneering the world's first agent-to-agent economic infrastructure. Building AI-first networking platform where AI representatives connect founders and investors based on mission alignment and calibrated quality standards. Pursuing government endorsement to position Dubai as the most intelligently connected innovation ecosystem.
+                            </p>
                         </div>
                     </div>
+                    <!-- Dot -->
+                    <div class="absolute left-4 md:left-1/2 top-1 w-2.5 h-2.5 rounded-full bg-primary-400 md:transform md:-translate-x-1/2 ring-4 ring-dark-950"></div>
                 </div>
 
-                <!-- Experience 2: OneContact Mexico -->
-                <div class="reveal" style="transition-delay: 0.2s;">
-                    <div class="gradient-border">
-                        <div class="bg-dark-900/90 rounded-xl p-6 md:p-8">
-                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                                <div>
-                                    <span class="inline-block px-3 py-1 rounded-full bg-primary-500/20 text-primary-400 text-sm font-medium mb-3">
-                                        2019 - 2024
-                                    </span>
-                                    <h3 class="text-xl md:text-2xl font-bold text-white mb-2">CEO — OneContact Mexico</h3>
-                                    <p class="text-gray-400">
-                                        Led telecom contact center operations, designed and deployed the Pakoa platform, scaled team from 80 to 180+ employees and achieved 4x profit growth. Transformed the business through technology and innovative management systems.
-                                    </p>
-                                </div>
-                                <div class="flex items-center space-x-2 text-gray-500 md:flex-shrink-0">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                    </svg>
-                                    <span>Mexico</span>
-                                </div>
+                <!-- Entry 2: OneContact Mexico -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-start md:ml-auto md:w-1/2 md:pl-12">
+                        <div class="ml-12 md:ml-0">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-dark-800 text-gray-400 text-xs font-medium border border-white/[0.06]">2019 &mdash; 2024</span>
                             </div>
+                            <h3 class="text-lg font-bold text-white mb-1">CEO &mdash; OneContact Mexico</h3>
+                            <p class="text-sm text-gray-500 mb-3">Mexico City</p>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Designed and built a decentralized, gamified growth system for telecom distribution. Scaled the team from 80 to 180+ employees, grew profits 4x, and reduced turnover by 50% over 5 years. Led an 8-person dev team building the Pakoa platform. Learned how aligned incentives drive network scale.
+                            </p>
                         </div>
                     </div>
+                    <div class="absolute left-4 md:left-1/2 top-1 w-2.5 h-2.5 rounded-full bg-gray-600 md:transform md:-translate-x-1/2 ring-4 ring-dark-950"></div>
                 </div>
 
-                <!-- Experience 3: Pantera Software -->
-                <div class="reveal" style="transition-delay: 0.3s;">
-                    <div class="gradient-border">
-                        <div class="bg-dark-900/90 rounded-xl p-6 md:p-8">
-                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                                <div>
-                                    <span class="inline-block px-3 py-1 rounded-full bg-primary-500/20 text-primary-400 text-sm font-medium mb-3">
-                                        2017 - 2019
-                                    </span>
-                                    <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Co-founder & Operations Lead — Pantera Software</h3>
-                                    <p class="text-gray-400">
-                                        Established operational processes for software development services company. Managed vendor relationships matching client requirements with development teams. Supervised Agile/Scrum delivery ensuring quality and timeline adherence.
-                                    </p>
-                                </div>
-                                <div class="flex items-center space-x-2 text-gray-500 md:flex-shrink-0">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                    </svg>
-                                    <span>Mexico</span>
-                                </div>
+                <!-- Entry 3: Grupo FRO -->
+                <div class="relative reveal">
+                    <div class="flex items-start md:justify-end md:w-1/2 md:pr-12">
+                        <div class="ml-12 md:ml-0">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="px-2.5 py-0.5 rounded-full bg-dark-800 text-gray-400 text-xs font-medium border border-white/[0.06]">2015 &mdash; 2018</span>
                             </div>
+                            <h3 class="text-lg font-bold text-white mb-1">Co-founder &mdash; Grupo FRO Fintech</h3>
+                            <p class="text-sm text-gray-500 mb-3">Mexico</p>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Built a local crowdfunding ecosystem at 22. Over 300 micro-investors deployed $1M+ into restaurants, bars, and events. Successfully activated community-driven entrepreneurship. Learned firsthand how misaligned incentives between operators and investors can destabilize an ecosystem &mdash; the structural insight that now drives Majlis.
+                            </p>
                         </div>
                     </div>
+                    <div class="absolute left-4 md:left-1/2 top-1 w-2.5 h-2.5 rounded-full bg-gray-600 md:transform md:-translate-x-1/2 ring-4 ring-dark-950"></div>
                 </div>
+            </div>
 
-                <!-- Experience 4: Grupo FRØ -->
-                <div class="reveal" style="transition-delay: 0.4s;">
-                    <div class="gradient-border">
-                        <div class="bg-dark-900/90 rounded-xl p-6 md:p-8">
-                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                                <div>
-                                    <span class="inline-block px-3 py-1 rounded-full bg-primary-500/20 text-primary-400 text-sm font-medium mb-3">
-                                        2015 - 2018
-                                    </span>
-                                    <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Co-founder & Operations Manager — Grupo FRØ (Fintech)</h3>
-                                    <p class="text-gray-400">
-                                        Built operational processes for crowdfunding platform in financial services sector. Developed financial modeling and risk assessment frameworks. Managed platform operations facilitating $1M+ USD in investments from 300+ micro investors.
-                                    </p>
-                                </div>
-                                <div class="flex items-center space-x-2 text-gray-500 md:flex-shrink-0">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                    </svg>
-                                    <span>Mexico</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="reveal" style="transition-delay: 0.5s;">
-                    <div class="gradient-border">
-                        <div class="bg-dark-900/90 rounded-xl p-6 md:p-8">
-                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                                <div>
-                                    <span class="inline-block px-3 py-1 rounded-full bg-accent-500/20 text-accent-400 text-sm font-medium mb-3">
-                                        Education
-                                    </span>
-                                    <h3 class="text-xl md:text-2xl font-bold text-white mb-2">B.S. in Industrial Engineering</h3>
-                                    <p class="text-gray-300 mb-1">Minor in Innovation</p>
-                                    <p class="text-gray-400">Tecnológico de Monterrey</p>
-                                </div>
-                                <div class="flex items-center space-x-2 text-gray-500 md:flex-shrink-0">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
-                                    </svg>
-                                    <span>Mexico</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Education -->
+            <div class="mt-16 text-center reveal">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-dark-800 border border-white/[0.06]">
+                    <svg class="w-4 h-4 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                    </svg>
+                    <span class="text-sm text-gray-400">B.S. Industrial Engineering, Minor in Innovation &mdash; Tecnol&oacute;gico de Monterrey</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Want to Know More Section -->
-    <section class="relative py-20 lg:py-28 bg-dark-800 overflow-hidden">
-        <div class="absolute inset-0">
-            <div class="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-accent-500/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="gradient-border rounded-2xl p-8 md:p-12 text-center reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Want to know more?</h2>
-                <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
-                    Chat with Mauricio's AI Assistant for an in-depth conversation about his experience, skills, or portfolio. Ask anything — from technical details to work style.
+    <!-- Chat Assistant Section -->
+    <section class="relative py-24 lg:py-32 bg-dark-900">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 reveal">
+                <span class="inline-block px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-4">
+                    AI Assistant
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Ask Me <span class="gradient-text">Anything</span>
+                </h2>
+                <p class="text-base text-gray-500">
+                    Chat with my AI assistant about Majlis, my background, or anything else.
                 </p>
+            </div>
 
-                <!-- Feature Highlights -->
-                <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-8">
-                    <div class="flex items-center space-x-2 text-gray-300">
-                        <span class="text-2xl">🎯</span>
-                        <span class="text-sm">Ask about specific projects</span>
-                    </div>
-                    <div class="flex items-center space-x-2 text-gray-300">
-                        <span class="text-2xl">💼</span>
-                        <span class="text-sm">Explore his experience</span>
-                    </div>
-                    <div class="flex items-center space-x-2 text-gray-300">
-                        <span class="text-2xl">🛠️</span>
-                        <span class="text-sm">Discover his skills</span>
+            <!-- Chat Widget -->
+            <div class="reveal rounded-2xl bg-dark-800 border border-white/[0.06] overflow-hidden">
+                <!-- Chat Messages -->
+                <div id="chat-messages" class="chat-container p-6 space-y-4 min-h-[300px]">
+                    <div class="flex gap-3">
+                        <div class="w-7 h-7 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+                            <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div class="bg-dark-700 rounded-xl rounded-tl-sm px-4 py-3 max-w-[80%]">
+                            <p class="text-sm text-gray-300">Hi! I'm Mauricio's AI assistant. Ask me about Majlis.social, his background building network-driven systems, or what he's working on in Dubai.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- CTA Button -->
-                <button
-                    id="open-chat-cta"
-                    class="relative z-10 inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl text-white font-semibold hover:from-primary-400 hover:to-accent-400 transition-all hover:scale-105 shadow-lg shadow-primary-500/25"
-                >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                    </svg>
-                    <span>Start a Conversation</span>
-                </button>
+                <!-- Chat Input -->
+                <div class="border-t border-white/[0.06] p-4">
+                    <form id="chat-form" class="flex gap-3">
+                        <input
+                            type="text"
+                            id="chat-input"
+                            placeholder="Ask about Majlis, background, skills..."
+                            class="flex-1 bg-dark-900 border border-white/[0.06] rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary-500/40 transition-colors"
+                            autocomplete="off"
+                        >
+                        <button type="submit" id="chat-send" class="btn-primary px-4 py-2.5 rounded-xl text-sm font-medium text-white">
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </div>
 
-                <p class="text-gray-500 text-sm mt-4">Powered by Claude API — yes, Mauricio built this too</p>
+            <!-- Suggested Questions -->
+            <div class="mt-4 flex flex-wrap gap-2 justify-center reveal">
+                <button onclick="askQuestion('What is Majlis.social?')" class="px-3 py-1.5 rounded-full bg-dark-800 border border-white/[0.06] text-xs text-gray-400 hover:text-white hover:border-primary-500/30 transition-all cursor-pointer">
+                    What is Majlis.social?
+                </button>
+                <button onclick="askQuestion('What is your background?')" class="px-3 py-1.5 rounded-full bg-dark-800 border border-white/[0.06] text-xs text-gray-400 hover:text-white hover:border-primary-500/30 transition-all cursor-pointer">
+                    What is your background?
+                </button>
+                <button onclick="askQuestion('Why Dubai?')" class="px-3 py-1.5 rounded-full bg-dark-800 border border-white/[0.06] text-xs text-gray-400 hover:text-white hover:border-primary-500/30 transition-all cursor-pointer">
+                    Why Dubai?
+                </button>
+                <button onclick="askQuestion('How does agent-to-agent networking work?')" class="px-3 py-1.5 rounded-full bg-dark-800 border border-white/[0.06] text-xs text-gray-400 hover:text-white hover:border-primary-500/30 transition-all cursor-pointer">
+                    How does a2a networking work?
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="relative py-24 lg:py-32 bg-dark-900 overflow-hidden">
-        <!-- Background elements -->
-        <div class="absolute inset-0">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center reveal">
-                <!-- Section Header -->
-                <span class="inline-block px-4 py-1.5 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-4">
-                    Let's Connect
+    <section id="contact" class="relative py-24 lg:py-32 bg-dark-950">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block px-3 py-1 rounded-full bg-accent-500/10 text-accent-400 text-sm font-medium mb-4">
+                    Contact
                 </span>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                    Get in <span class="gradient-text">Touch</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Let's <span class="gradient-text">Connect</span>
                 </h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
-                    I'm open to opportunities in AI implementation, business intelligence, and solutions consulting. Let's talk.
+                <p class="text-base text-gray-500 max-w-lg mx-auto">
+                    Interested in Majlis.social, potential collaborations, or just want to talk about the future of AI-mediated economies? Reach out.
                 </p>
+            </div>
 
-                <!-- Contact Card with Form -->
-                <div class="gradient-border inline-block w-full max-w-xl glow-teal">
-                    <div class="bg-dark-800/90 rounded-xl p-8 md:p-10">
-                        <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
+            <!-- Contact Form -->
+            <div class="reveal rounded-2xl bg-dark-900 border border-white/[0.06] p-8">
+                <form id="contact-form" class="space-y-5">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1.5">Name</label>
+                            <input type="text" name="name" required
+                                class="w-full bg-dark-800 border border-white/[0.06] rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary-500/40 transition-colors"
+                                placeholder="Your name">
                         </div>
-
-                        <h3 class="text-2xl font-semibold text-white mb-3">Let's Build Something Together</h3>
-                        <p class="text-gray-400 mb-8">
-                            Whether you have a project in mind or just want to connect, I'd love to hear from you.
-                        </p>
-
-                        <!-- Contact Form -->
-                        <form id="contact-form" class="space-y-4 text-left">
-                            <input type="hidden" name="access_key" value="e1498d71-5594-4619-b7cd-a0fb2eafe258">
-                            <input type="hidden" name="subject" value="New Contact from Pantaia.com">
-                            <input type="hidden" name="from_name" value="Pantaia Portfolio">
-
-                            <div class="relative z-10">
-                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
-                                    placeholder="John Doe"
-                                >
-                            </div>
-
-                            <div class="relative z-10">
-                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors"
-                                    placeholder="john@example.com"
-                                >
-                            </div>
-
-                            <div class="relative z-10">
-                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    rows="4"
-                                    required
-                                    class="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors resize-none"
-                                    placeholder="Tell me about your project or opportunity..."
-                                ></textarea>
-                            </div>
-
-                            <button
-                                type="submit"
-                                id="submit-btn"
-                                class="btn-primary w-full px-6 py-4 rounded-xl font-semibold text-lg flex items-center justify-center space-x-2 relative z-10"
-                            >
-                                <span id="btn-text">Send Message</span>
-                                <svg id="btn-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                                </svg>
-                                <svg id="btn-spinner" class="w-5 h-5 animate-spin hidden" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                </svg>
-                            </button>
-
-                            <!-- Success/Error Messages -->
-                            <div id="form-success" class="hidden p-4 rounded-xl bg-green-500/20 border border-green-500/30 text-green-400 text-center">
-                                Message sent successfully! I'll get back to you soon.
-                            </div>
-                            <div id="form-error" class="hidden p-4 rounded-xl bg-red-500/20 border border-red-500/30 text-red-400 text-center">
-                                Something went wrong. Please try again or email me directly.
-                            </div>
-                        </form>
-
-                        <div class="mt-8 pt-8 border-t border-white/10 relative z-10">
-                            <p class="text-sm text-gray-500 mb-4">Or connect with me on</p>
-                            <div class="flex items-center justify-center space-x-4">
-                                <!-- LinkedIn Icon Button -->
-                                <a href="https://www.linkedin.com/in/mauricio-s-l%C3%B3pez/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-[#0077B5] flex items-center justify-center hover:scale-110 transition-transform" title="LinkedIn">
-                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                    </svg>
-                                </a>
-                                <!-- GitHub Icon Button -->
-                                <a href="https://github.com/mauriciosimon" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-gray-700 flex items-center justify-center hover:scale-110 transition-transform" title="GitHub">
-                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                    </svg>
-                                </a>
-                                <!-- WhatsApp Icon Button -->
-                                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center hover:scale-110 transition-transform" title="WhatsApp">
-                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                                    </svg>
-                                </a>
-                            </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1.5">Email</label>
+                            <input type="email" name="email" required
+                                class="w-full bg-dark-800 border border-white/[0.06] rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary-500/40 transition-colors"
+                                placeholder="your@email.com">
                         </div>
                     </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1.5">Subject</label>
+                        <select name="subject"
+                            class="w-full bg-dark-800 border border-white/[0.06] rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-primary-500/40 transition-colors">
+                            <option value="majlis">About Majlis.social</option>
+                            <option value="investment">Investment Inquiry</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="general">General</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1.5">Message</label>
+                        <textarea name="message" rows="4" required
+                            class="w-full bg-dark-800 border border-white/[0.06] rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary-500/40 transition-colors resize-none"
+                            placeholder="Tell me what's on your mind..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full btn-primary py-3 rounded-xl font-medium text-white text-sm">
+                        Send Message
+                    </button>
+                </form>
+                <div id="contact-success" class="hidden text-center py-8">
+                    <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Message sent!</h3>
+                    <p class="text-sm text-gray-400">I'll get back to you soon.</p>
                 </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center justify-center gap-4 mt-8 reveal">
+                <a href="https://www.linkedin.com/in/mauricio-s-l%C3%B3pez/" target="_blank" class="w-10 h-10 rounded-xl bg-dark-800 border border-white/[0.06] flex items-center justify-center text-gray-400 hover:text-white hover:border-primary-500/30 transition-all">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="mailto:mauricio@pantaia.com" class="w-10 h-10 rounded-xl bg-dark-800 border border-white/[0.06] flex items-center justify-center text-gray-400 hover:text-white hover:border-primary-500/30 transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Chat Widget -->
-    <!-- Floating Chat Button -->
-    <button
-        id="chat-button"
-        class="fixed bottom-6 right-6 z-50 px-5 py-3 md:px-6 md:py-3.5 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 shadow-lg flex items-center space-x-2 hover:scale-105 transition-transform animate-pulse-glow"
-        title="Ask about Mauricio"
-    >
-        <svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-        </svg>
-        <span class="text-white font-medium text-sm md:text-base">Ask about Mauricio</span>
-    </button>
-
-    <!-- Chat Panel -->
-    <div
-        id="chat-panel"
-        class="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] h-[550px] max-h-[calc(100vh-6rem)] bg-dark-800 rounded-2xl shadow-2xl border border-white/10 flex flex-col overflow-hidden hidden"
-    >
-        <!-- Chat Header -->
-        <div class="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-primary-600 to-accent-600 flex-shrink-0">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold text-sm">Mauricio's AI Assistant</h3>
-                    <p class="text-white/70 text-xs">Ask me anything about his work</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-1">
-                <button id="chat-minimize" class="p-2 hover:bg-white/10 rounded-lg transition-colors" title="Minimize">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
-                    </svg>
-                </button>
-                <button id="chat-close" class="p-2 hover:bg-white/10 rounded-lg transition-colors" title="Close">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Chat Messages -->
-        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-1">
-            <!-- Welcome Message -->
-            <div class="flex justify-start mb-3">
-                <div class="bg-gray-700 text-gray-100 rounded-2xl px-4 py-3 max-w-[85%] rounded-bl-md">
-                    <p class="text-sm mb-2">👋 Hi! I'm Mauricio's AI Assistant.</p>
-                    <p class="text-sm mb-2">I can help you learn about:</p>
-                    <ul class="text-sm text-gray-300 ml-1 mb-2 space-y-0.5">
-                        <li>• His projects and case studies</li>
-                        <li>• Technical skills and tools he uses</li>
-                        <li>• Leadership experience and work style</li>
-                        <li>• Whether he'd be a good fit for your team</li>
-                    </ul>
-                    <p class="text-sm">Ask me anything — I'm here for an in-depth conversation about his experience!</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Suggested Questions -->
-        <div id="suggested-questions" class="px-4 pb-2 flex-shrink-0">
-            <div class="flex flex-wrap gap-2">
-                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
-                    What's his most impressive project?
-                </button>
-                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
-                    How does he approach problem-solving?
-                </button>
-                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
-                    What's his leadership experience?
-                </button>
-                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
-                    What tools does he work with?
-                </button>
-                <button class="suggested-question text-xs px-3 py-1.5 rounded-full bg-primary-500/20 text-primary-300 hover:bg-primary-500/30 transition-colors border border-primary-500/30">
-                    Is he available for hire?
-                </button>
-            </div>
-        </div>
-
-        <!-- Chat Input -->
-        <div class="p-4 border-t border-white/10 flex-shrink-0">
-            <p class="text-center text-xs text-gray-400 mb-2">Go ahead — ask me anything specific. I love in-depth questions.</p>
-            <div class="flex items-center space-x-2">
-                <input
-                    type="text"
-                    id="chat-input"
-                    placeholder="Ask a question..."
-                    class="flex-1 px-4 py-2.5 bg-gray-900 border border-gray-700 rounded-xl text-white text-sm placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
-                >
-                <button
-                    id="chat-send"
-                    class="w-10 h-10 rounded-xl bg-primary-500 hover:bg-primary-400 flex items-center justify-center transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                    </svg>
-                </button>
-            </div>
-            <p class="text-center text-xs text-gray-500 mt-2">Powered by Claude</p>
-        </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="bg-dark-900 border-t border-white/5 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                        <span class="text-white font-bold text-sm">MS</span>
-                    </div>
-                    <span class="text-lg font-semibold gradient-text">Mauricio Simon</span>
+    <footer class="py-8 bg-dark-950 border-t border-white/[0.04]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-600">&copy; 2025 Mauricio Simon. Built from Dubai.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#about" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">About</a>
+                    <a href="#projects" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">Projects</a>
+                    <a href="#contact" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">Contact</a>
                 </div>
-                <p class="text-gray-500 text-sm">
-                    Built with Claude Code | 2025
-                </p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Navbar background on scroll
+        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('nav-blur', 'bg-dark-900/80', 'border-b', 'border-white/5');
+                navbar.classList.add('nav-blur', 'bg-dark-950/80', 'border-b', 'border-white/[0.04]');
             } else {
-                navbar.classList.remove('nav-blur', 'bg-dark-900/80', 'border-b', 'border-white/5');
+                navbar.classList.remove('nav-blur', 'bg-dark-950/80', 'border-b', 'border-white/[0.04]');
             }
         });
 
-        // Intersection Observer for reveal animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
 
+        // Reveal on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        // Observe all elements with reveal classes
-        document.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Chat Widget Functionality
-        const chatButton = document.getElementById('chat-button');
-        const chatPanel = document.getElementById('chat-panel');
-        const chatClose = document.getElementById('chat-close');
-        const chatMinimize = document.getElementById('chat-minimize');
+        // Chat functionality
         const chatMessages = document.getElementById('chat-messages');
+        const chatForm = document.getElementById('chat-form');
         const chatInput = document.getElementById('chat-input');
-        const chatSend = document.getElementById('chat-send');
-        const suggestedQuestions = document.querySelectorAll('.suggested-question');
-
         let conversationHistory = [];
-        let isTyping = false;
+        let isLoading = false;
 
-        // Toggle chat panel
-        chatButton.addEventListener('click', () => {
-            chatPanel.classList.toggle('hidden');
-            chatButton.classList.toggle('hidden');
-            if (!chatPanel.classList.contains('hidden')) {
-                chatInput.focus();
+        function addMessage(content, isUser) {
+            const div = document.createElement('div');
+            div.className = `flex gap-3 ${isUser ? 'justify-end' : ''}`;
+
+            if (isUser) {
+                div.innerHTML = `
+                    <div class="bg-primary-500/15 rounded-xl rounded-tr-sm px-4 py-3 max-w-[80%]">
+                        <p class="text-sm text-gray-200">${escapeHtml(content)}</p>
+                    </div>
+                `;
+            } else {
+                div.innerHTML = `
+                    <div class="w-7 h-7 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+                        <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div class="bg-dark-700 rounded-xl rounded-tl-sm px-4 py-3 max-w-[80%]">
+                        <p class="text-sm text-gray-300">${escapeHtml(content)}</p>
+                    </div>
+                `;
             }
-        });
 
-        chatClose.addEventListener('click', () => {
-            chatPanel.classList.add('hidden');
-            chatButton.classList.remove('hidden');
-        });
-
-        chatMinimize.addEventListener('click', () => {
-            chatPanel.classList.add('hidden');
-            chatButton.classList.remove('hidden');
-        });
-
-        // CTA button to open chat
-        const openChatCta = document.getElementById('open-chat-cta');
-        if (openChatCta) {
-            openChatCta.addEventListener('click', () => {
-                chatPanel.classList.remove('hidden');
-                chatButton.classList.add('hidden');
-                chatInput.focus();
-                // Scroll chat into view on mobile
-                chatPanel.scrollIntoView({ behavior: 'smooth', block: 'end' });
-            });
-        }
-
-        // Add message to chat
-        function addMessage(content, isUser = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'} mb-3`;
-            messageDiv.innerHTML = `
-                <div class="${isUser ? 'bg-primary-600 text-white' : 'bg-gray-700 text-gray-100'} rounded-2xl px-4 py-2 max-w-[85%] ${isUser ? 'rounded-br-md' : 'rounded-bl-md'}">
-                    <p class="text-sm whitespace-pre-wrap">${content}</p>
-                </div>
-            `;
-            chatMessages.appendChild(messageDiv);
+            chatMessages.appendChild(div);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Show typing indicator
-        function showTyping() {
-            const typingDiv = document.createElement('div');
-            typingDiv.id = 'typing-indicator';
-            typingDiv.className = 'flex justify-start mb-3';
-            typingDiv.innerHTML = `
-                <div class="bg-gray-700 rounded-2xl px-4 py-3 rounded-bl-md">
+        function addLoadingIndicator() {
+            const div = document.createElement('div');
+            div.id = 'chat-loading';
+            div.className = 'flex gap-3';
+            div.innerHTML = `
+                <div class="w-7 h-7 rounded-full bg-primary-500/20 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div class="bg-dark-700 rounded-xl rounded-tl-sm px-4 py-3">
                     <div class="flex space-x-1">
-                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
-                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
-                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce" style="animation-delay:0.1s"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce" style="animation-delay:0.2s"></div>
                     </div>
                 </div>
             `;
-            chatMessages.appendChild(typingDiv);
+            chatMessages.appendChild(div);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        function hideTyping() {
-            const typingIndicator = document.getElementById('typing-indicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
-            }
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
-        // Send message
         async function sendMessage(message) {
-            if (!message.trim() || isTyping) return;
+            if (isLoading || !message.trim()) return;
+            isLoading = true;
 
-            const userMessage = message.trim();
-            chatInput.value = '';
-            addMessage(userMessage, true);
-
-            // Hide suggested questions after first message
-            document.getElementById('suggested-questions').classList.add('hidden');
-
-            isTyping = true;
-            chatSend.disabled = true;
-            showTyping();
+            addMessage(message, true);
+            addLoadingIndicator();
 
             try {
-                const response = await fetch('/api/chat', {
+                const res = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        message: userMessage,
-                        conversationHistory: conversationHistory
+                        message: message.trim(),
+                        conversationHistory
                     })
                 });
 
-                const data = await response.json();
+                const loading = document.getElementById('chat-loading');
+                if (loading) loading.remove();
 
-                hideTyping();
-
-                if (data.error) {
-                    addMessage("Sorry, I encountered an error. Please try again.");
+                if (!res.ok) {
+                    const err = await res.json();
+                    addMessage(err.error || 'Something went wrong. Try again.', false);
                 } else {
-                    addMessage(data.reply);
+                    const data = await res.json();
+                    addMessage(data.reply, false);
                     conversationHistory.push(
-                        { role: 'user', content: userMessage },
+                        { role: 'user', content: message.trim() },
                         { role: 'assistant', content: data.reply }
                     );
                 }
-            } catch (error) {
-                hideTyping();
-                addMessage("Sorry, I couldn't connect. Please try again.");
+            } catch (e) {
+                const loading = document.getElementById('chat-loading');
+                if (loading) loading.remove();
+                addMessage('Connection error. Please try again.', false);
             }
 
-            isTyping = false;
-            chatSend.disabled = false;
-            chatInput.focus();
+            isLoading = false;
         }
 
-        // Event listeners
-        chatSend.addEventListener('click', () => sendMessage(chatInput.value));
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage(chatInput.value);
-            }
-        });
-
-        suggestedQuestions.forEach(btn => {
-            btn.addEventListener('click', () => {
-                sendMessage(btn.textContent);
-            });
-        });
-
-        // Contact Form Handling
-        const contactForm = document.getElementById('contact-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const btnIcon = document.getElementById('btn-icon');
-        const btnSpinner = document.getElementById('btn-spinner');
-        const formSuccess = document.getElementById('form-success');
-        const formError = document.getElementById('form-error');
-
-        contactForm.addEventListener('submit', async function(e) {
+        chatForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const msg = chatInput.value;
+            chatInput.value = '';
+            sendMessage(msg);
+        });
 
-            // Show loading state
-            btnText.textContent = 'Sending...';
-            btnIcon.classList.add('hidden');
-            btnSpinner.classList.remove('hidden');
-            submitBtn.disabled = true;
-            formSuccess.classList.add('hidden');
-            formError.classList.add('hidden');
+        function askQuestion(q) {
+            chatInput.value = q;
+            sendMessage(q);
+        }
 
+        // Contact form
+        const contactForm = document.getElementById('contact-form');
+        const contactSuccess = document.getElementById('contact-success');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
 
             try {
-                const response = await fetch('https://api.web3forms.com/submit', {
+                await fetch('/api/contact', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-
-                const result = await response.json();
-
-                if (result.success) {
-                    formSuccess.classList.remove('hidden');
-                    contactForm.reset();
-                } else {
-                    formError.classList.remove('hidden');
-                }
-            } catch (error) {
-                formError.classList.remove('hidden');
+            } catch (err) {
+                // Silent fail
             }
 
-            // Reset button state
-            btnText.textContent = 'Send Message';
-            btnIcon.classList.remove('hidden');
-            btnSpinner.classList.add('hidden');
-            submitBtn.disabled = false;
+            contactForm.classList.add('hidden');
+            contactSuccess.classList.remove('hidden');
         });
     </script>
 </body>
