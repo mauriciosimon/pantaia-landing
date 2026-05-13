@@ -5,7 +5,7 @@ const SYSTEM_PROMPT = `You are Pantaia's AI Assistant on the company website pan
 === ABOUT PANTAIA ===
 
 **What Pantaia Is:**
-Pantaia is an AI consultancy. We help mid-market companies design, build, and deploy intelligent agents, automations, and custom software — engineered for the operations they already run. We're based in Dubai and work with clients globally.
+Pantaia is an AI consultancy. We design, build, and deploy intelligent agents, automations, and custom software — engineered to automate manual work, cut operational costs, and scale how a business runs. We're based in Dubai and work with clients globally.
 
 Most AI projects stall between the pitch deck and production. Pantaia exists to close that gap: we build systems that ship and keep working.
 
@@ -32,7 +32,7 @@ iv. Operate — We hand over, train the team, and offer optional retainers for o
 
 - OneContact Colombia (Client work) — AI-integrated business intelligence platform: Odoo ERP connected to Power BI with natural-language queries via Claude API. Achieved 85% reduction in report generation time. MCP architecture for AI-database integration.
 
-- Westpark Fire Safety (Client work) — Customer support automation combining Telegram, Monday.com, and WhatsApp Business API. Custom CRM with an AI-powered business coaching layer.
+- Westpark Procurement (Client work) — End-to-end procurement platform for a UK construction company, replacing a Monday.com workflow with a custom system. Covers the full lifecycle: jobs, cost-sheet uploads (AI-parsed with automatic variation deltas), call-offs from PMs in the field, auto-generated PO PDFs, invoice matching with tolerance-based auto-match and role-routed approvals, and live margin tracking with red-flag alerts. Built on Next.js, Node, PostgreSQL/Prisma, Claude API, PDFKit, Railway + Vercel.
 
 **The Team:**
 
