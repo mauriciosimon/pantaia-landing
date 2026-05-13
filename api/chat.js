@@ -1,5 +1,3 @@
-const Anthropic = require("@anthropic-ai/sdk").default;
-
 const SYSTEM_PROMPT = `You are Pantaia's AI Assistant on the company website pantaia.com. Your job is to answer questions about Pantaia — what we do, how we work, our portfolio, and how a potential client should engage us. You speak on behalf of the firm but always identify as an AI assistant.
 
 === ABOUT PANTAIA ===
@@ -30,9 +28,9 @@ iv. Operate — We hand over, train the team, and offer optional retainers for o
 
 - Pakoa (Client work) — Gamified, decentralized growth platform built for telecom sales distribution. Scaled the operating team from 80 to 180+ employees, delivered 4x profit growth and 50% lower turnover over 5 years. Still operating today.
 
-- OneContact Colombia (Client work) — AI-integrated business intelligence platform: Odoo ERP connected to Power BI with natural-language queries via Claude API. Achieved 85% reduction in report generation time. MCP architecture for AI-database integration.
+- OneContact Colombia (Client work) — AI-integrated business intelligence platform: Odoo ERP connected to Power BI with natural-language queries. Achieved 85% reduction in report generation time. MCP architecture for AI-database integration.
 
-- Westpark Procurement (Client work) — End-to-end procurement platform for a UK construction company, replacing a Monday.com workflow with a custom system. Covers the full lifecycle: jobs, cost-sheet uploads (AI-parsed with automatic variation deltas), call-offs from PMs in the field, auto-generated PO PDFs, invoice matching with tolerance-based auto-match and role-routed approvals, and live margin tracking with red-flag alerts. Built on Next.js, Node, PostgreSQL/Prisma, Claude API, PDFKit, Railway + Vercel.
+- Westpark Procurement (Client work) — End-to-end procurement platform for a UK construction company, replacing a Monday.com workflow with a custom system. Covers the full lifecycle: jobs, cost-sheet uploads (AI-parsed with automatic variation deltas), call-offs from PMs in the field, auto-generated PO PDFs, invoice matching with tolerance-based auto-match and role-routed approvals, and live margin tracking with red-flag alerts. Built on Next.js, Node, PostgreSQL/Prisma, PDFKit, Railway + Vercel.
 
 **The Team:**
 
@@ -60,6 +58,9 @@ The simplest way to start is the contact form on pantaia.com. We respond within 
 10. Keep responses concise — 2-4 sentences for simple questions, more for complex ones.
 11. Be warm, articulate, and direct — matching the firm's positioning as engineers who ship, not slideware consultants.`;
 
+const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
+const DEEPSEEK_MODEL = "deepseek-chat";
+
 // Simple in-memory rate limiting
 const rateLimitMap = new Map();
 const RATE_LIMIT = 10; // messages per minute
@@ -68,8 +69,6 @@ const RATE_LIMIT_WINDOW = 60000; // 1 minute in ms
 function checkRateLimit(ip) {
   const now = Date.now();
   const userRequests = rateLimitMap.get(ip) || [];
-
-  // Filter requests within the window
   const recentRequests = userRequests.filter(time => now - time < RATE_LIMIT_WINDOW);
 
   if (recentRequests.length >= RATE_LIMIT) {
@@ -82,7 +81,6 @@ function checkRateLimit(ip) {
 }
 
 module.exports = async function handler(req, res) {
-  // Set CORS headers
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -95,10 +93,15 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  // Rate limiting
   const ip = req.headers["x-forwarded-for"] || req.socket?.remoteAddress || "unknown";
   if (!checkRateLimit(ip)) {
     return res.status(429).json({ error: "Too many requests. Please wait a moment." });
+  }
+
+  const apiKey = process.env.DEEPSEEK_API_KEY;
+  if (!apiKey) {
+    console.error("Chat API error: DEEPSEEK_API_KEY is not set");
+    return res.status(500).json({ error: "Server is not configured. Please try again later." });
   }
 
   try {
@@ -108,17 +111,14 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: "Message is required" });
     }
 
-    // Sanitize message
     const sanitizedMessage = message.trim().slice(0, 1000);
 
     if (!sanitizedMessage) {
       return res.status(400).json({ error: "Message cannot be empty" });
     }
 
-    const client = new Anthropic();
-
-    // Build messages array
     const messages = [
+      { role: "system", content: SYSTEM_PROMPT },
       ...conversationHistory.slice(-10).map(msg => ({
         role: msg.role,
         content: msg.content
@@ -126,14 +126,33 @@ module.exports = async function handler(req, res) {
       { role: "user", content: sanitizedMessage }
     ];
 
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 500,
-      system: SYSTEM_PROMPT,
-      messages: messages
+    const response = await fetch(DEEPSEEK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: DEEPSEEK_MODEL,
+        messages,
+        max_tokens: 500,
+        temperature: 0.7
+      })
     });
 
-    const reply = response.content[0].text;
+    if (!response.ok) {
+      const errorBody = await response.text();
+      console.error("DeepSeek API error:", response.status, errorBody);
+      return res.status(500).json({ error: "Something went wrong. Please try again." });
+    }
+
+    const data = await response.json();
+    const reply = data.choices?.[0]?.message?.content;
+
+    if (!reply) {
+      console.error("DeepSeek API: unexpected response shape", JSON.stringify(data));
+      return res.status(500).json({ error: "Something went wrong. Please try again." });
+    }
 
     return res.status(200).json({ reply });
   } catch (error) {
