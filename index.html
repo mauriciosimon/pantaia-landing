@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pantaia | AI Consultancy &mdash; Agents, Automations & Custom Software</title>
-    <meta name="description" content="Pantaia is an AI consultancy that designs, builds, and deploys intelligent agents, automations, and custom software engineered to automate work, cut costs, and scale operations. Dubai / Global.">
+    <meta name="description" content="Pantaia is an AI consultancy that designs, builds, and deploys intelligent agents, automations, and custom software engineered to automate work, cut costs, and scale operations. Houston &middot; CDMX &middot; Dubai.">
     <link rel="stylesheet" href="/tailwind.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,6 +94,11 @@
 
         .border-subtle { border-color: rgba(255,255,255,0.06); }
 
+        .shot { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #1a1f2e; }
+        .shot img { display: block; width: 100%; height: auto; }
+        .diagram { border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); background: #0f1219; padding: 16px; overflow: hidden; }
+        .diagram svg { width: 100%; height: auto; display: block; }
+
         /* Chat styles */
         .chat-container {
             max-height: 400px;
@@ -160,7 +165,7 @@
                 <!-- Eyebrow -->
                 <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-primary-500/20 bg-primary-500/[0.05] mb-10 fade-in-up">
                     <span class="w-1.5 h-1.5 rounded-full bg-primary-400 mr-2"></span>
-                    <span class="text-sm text-primary-300">AI Consultancy &middot; Dubai / Global</span>
+                    <span class="text-sm text-primary-300">AI Consultancy &middot; Houston &middot; CDMX &middot; Dubai</span>
                 </div>
 
                 <!-- Headline -->
@@ -285,6 +290,7 @@
     </section>
 
     <!-- Portfolio Section -->
+    <!-- Work Section -->
     <section id="work" class="relative py-24 lg:py-32 bg-dark-950">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
@@ -296,279 +302,639 @@
                     What we've <span class="gradient-text">built.</span>
                 </h2>
                 <p class="text-lg text-gray-500 max-w-2xl mx-auto">
-                    From AI-integrated business intelligence to multi-agent platforms &mdash; production systems for real companies.
+                    Production systems for real companies &mdash; from agent-to-agent platforms to procurement, field operations, finance and automotive marketplaces.
                 </p>
             </div>
 
-            <!-- Project 1: Matchlist.ai -->
-            <div class="mb-12 reveal">
-                <div class="rounded-2xl border border-primary-500/20 bg-dark-900 p-8 md:p-10">
-                    <div class="grid lg:grid-cols-2 gap-10 items-start">
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="px-3 py-1 rounded-full bg-primary-500/15 text-primary-400 text-sm font-medium">
-                                    Product &middot; AI-First Platform
-                                </span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Matchlist.ai</h3>
-                            <p class="text-gray-400 text-base leading-relaxed mb-6">
-                                A global AI-first networking platform where AI agents speak to each other first, filtering for mission alignment before humans invest time. Pantaia's flagship product, showcasing our agent-to-agent architecture in production.
+            <!-- 1. Matchlist -->
+            <div class="mb-10 reveal">
+                <div class="rounded-2xl border border-primary-500/20 bg-dark-900 p-6 sm:p-8 md:p-10">
+                    <div class="grid lg:grid-cols-5 gap-10 items-start">
+                        <div class="lg:col-span-2">
+                            <span class="inline-block px-3 py-1 rounded-full bg-primary-500/15 text-primary-400 text-sm font-medium mb-4">Own product &middot; AI-first platform</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">Matchlist</h3>
+                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-4">Flagship &middot; Agent-to-agent architecture &middot; Live</p>
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                A global AI-first networking platform where AI agents speak to each other first, filtering for mission alignment before humans invest time. Only 1 in 20 networking conversations is relevant &mdash; agents filter first.
                             </p>
-
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">Agent-to-agent conversations with persistent memory architecture</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">Mission-based matching with mutual opt-in</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">Conversation rating system for signal validation</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">Multi-hub by design &mdash; built for global innovation networks</span>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">React</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">TypeScript</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Node.js</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">PostgreSQL</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Claude API</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">A2A Protocol</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">MCP</span>
-                            </div>
-
-                            <a href="https://matchlist.ai" target="_blank" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium">
-                                Visit matchlist.ai
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                            </a>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">Agent-to-agent conversations with persistent memory</span></li>
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">Mutual opt-in matching, conversation rating for signal</span></li>
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">Multi-hub by design &mdash; built for global innovation networks</span></li>
+                            </ul>
+                            <a href="https://matchlist.ai" target="_blank" rel="noopener" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium">Visit matchlist.ai <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                         </div>
-
-                        <!-- Side cards -->
-                        <div class="space-y-6">
-                            <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
-                                <h4 class="text-sm font-semibold text-primary-400 uppercase tracking-wider mb-3">What we built</h4>
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    An end-to-end multi-agent platform: AI representatives that hold autonomous conversations, persistent memory across sessions, mutual opt-in matching, and a quality-rating loop. Production architecture, designed to scale across hubs.
-                                </p>
-                            </div>
-                            <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
-                                <h4 class="text-sm font-semibold text-accent-400 uppercase tracking-wider mb-3">Why it matters</h4>
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    Founders and investors spend enormous time networking &mdash; yet only 1 in 20 conversations is actually relevant. Matchlist proves that agent-to-agent pre-processing is a viable production pattern, not a research demo.
-                                </p>
-                            </div>
-                            <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
-                                <h4 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">New category</h4>
-                                <p class="text-gray-300 text-sm leading-relaxed">
-                                    Matchlist pioneers agent-to-agent networking. It's the proof point for the architecture patterns we bring to client engagements: persistent memory, multi-agent orchestration, signal-validated workflows.
-                                </p>
-                            </div>
+                        <div class="lg:col-span-3 space-y-4">
+                            <div class="shot"><img src="/img/work/matchlist-1.webp" width="1600" height="798" alt="Matchlist — agent-to-agent conversation view" loading="lazy" decoding="async"></div>
+                            <div class="shot"><img src="/img/work/matchlist-2.webp" width="1600" height="752" alt="Matchlist — matches and mission alignment" loading="lazy" decoding="async"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2: Pakoa -->
-            <div class="mb-12 reveal">
-                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-8 md:p-10">
-                    <div class="grid lg:grid-cols-2 gap-10 items-start">
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06]">
-                                    Client work &middot; Distribution Platform
-                                </span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-4">Pakoa</h3>
-                            <p class="text-gray-400 text-base leading-relaxed mb-6">
-                                Gamified, decentralized growth platform built for telecom sales distribution. Scaled the operating team from 80 &rarr; 180+ with 4&times; profit growth and 50% lower turnover over 5 years.
-                            </p>
-
-                            <div class="grid grid-cols-2 gap-4 mb-6">
-                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-4">
-                                    <div class="text-2xl font-bold text-white">80 &rarr; 180+</div>
-                                    <div class="text-sm text-gray-500">Team scaled</div>
-                                </div>
-                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-4">
-                                    <div class="text-2xl font-bold text-white">4x</div>
-                                    <div class="text-sm text-gray-500">Profit growth</div>
-                                </div>
-                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-4">
-                                    <div class="text-2xl font-bold text-white">50%</div>
-                                    <div class="text-sm text-gray-500">Turnover reduced</div>
-                                </div>
-                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-4">
-                                    <div class="text-2xl font-bold text-white">5 yrs</div>
-                                    <div class="text-sm text-gray-500">Sustained growth</div>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">React</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">TypeScript</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Prisma</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">PostgreSQL</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Claude API</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Gamification</span>
-                            </div>
-
-                            <a href="https://www.pakoa.com/en" target="_blank" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium">
-                                Visit pakoa.com
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                            </a>
+            <!-- 2. Westpark Procurement -->
+            <div class="mb-10 reveal">
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-6 sm:p-8 md:p-10">
+                    <div class="grid lg:grid-cols-5 gap-10 items-center">
+                        <div class="lg:col-span-3 lg:order-1 order-2">
+                            <div class="shot"><img src="/img/work/westpark-1.webp" width="1600" height="834" alt="Westpark Procurement — jobs board with live margins" loading="lazy" decoding="async"></div>
                         </div>
+                        <div class="lg:col-span-2 lg:order-2 order-1">
+                            <span class="inline-block px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06] mb-4">Client work &middot; Custom procurement platform</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">Westpark Procurement</h3>
+                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-4">UK construction &middot; Live, in production</p>
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                End-to-end procurement platform for a UK construction company &mdash; replacing Monday.com with a custom system covering the full lifecycle from cost sheet to paid invoice.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">AI cost-sheet parsing with automatic variation deltas</span></li>
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">Live job margins: budget vs. committed vs. actual</span></li>
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">Tolerance-based invoice matching, role-routed approvals</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        <div>
+            <!-- 3. satoris.build -->
+            <div class="mb-10 reveal">
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-6 sm:p-8 md:p-10">
+                    <div class="grid lg:grid-cols-5 gap-10 items-start mb-10">
+                        <div class="lg:col-span-2">
+                            <span class="inline-block px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06] mb-4">Client work &middot; Construction operations platform</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">satoris.build</h3>
+                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-4">UK construction &middot; Multi-tenant + iOS &middot; Live</p>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                A complete operations platform for a UK builder &mdash; evolved into a reusable base platform: one codebase, deployed per client, features switched per tenant. The same engine now powers multiple construction businesses.
+                            </p>
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                Users define their own AI agents &mdash; like the fire-door agent that turns site surveys into branded PDF quotes. A native iOS app stays in sync with the web.
+                            </p>
+                            <a href="https://satorisbuild.vercel.app" target="_blank" rel="noopener" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium">Visit satoris.build <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                        </div>
+                        <div class="lg:col-span-3 space-y-4">
+                            <div class="shot"><img src="/img/work/satoris-1.webp" width="1600" height="857" alt="satoris.build — operations dashboard" loading="lazy" decoding="async"></div>
+                            <div class="shot"><img src="/img/work/satoris-2.webp" width="1600" height="846" alt="satoris.build — user-defined AI agents" loading="lazy" decoding="async"></div>
+                        </div>
+                    </div>
+
+                    <!-- How it works diagrams -->
+                    <div class="border-t border-white/[0.06] pt-10">
+                        <div class="text-center mb-8">
+                            <p class="text-xs uppercase tracking-[0.18em] text-primary-400 mb-2">How it works</p>
+                            <h4 class="text-xl md:text-2xl font-bold text-white">A factory line for your business.</h4>
+                            <p class="text-gray-500 text-sm mt-2 max-w-2xl mx-auto">Suppliers, materials and trades go in one side. The machine &mdash; your data spine, an AI core, a crew of agents &mdash; does the busywork. Finished projects come out the other. Your team steers from the control room.</p>
+                        </div>
+                        <div class="diagram mb-10">
+                            <svg viewBox="0 0 1240 920" style="width:100%;height:auto;display:block" font-family="Inter, sans-serif" role="img" aria-label="The Satoris factory line: suppliers flow into a machine — LLMs power agents working through MCP on the business model — and finished projects come out to clients; outcomes loop back.">
+        <defs>
+          <radialGradient id="p6glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(47,224,200,.5)"></stop>
+            <stop offset="60%" stop-color="rgba(47,224,200,.12)"></stop>
+            <stop offset="100%" stop-color="rgba(47,224,200,0)"></stop>
+          </radialGradient>
+          <marker id="p6arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0.5 L7.5,4 L0,7.5 Z" fill="#2fe0c8"></path></marker>
+          <marker id="p6arrb" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0.5 L7.5,4 L0,7.5 Z" fill="#3d8bfd"></path></marker>
+          <marker id="p6arrw" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0.5 L7.5,4 L0,7.5 Z" fill="#8fa0a8"></path></marker>
+        </defs>
+
+        <line x1="60" y1="560" x2="1180" y2="560" stroke="#26333d" stroke-width="3"></line>
+        <line x1="60" y1="576" x2="1180" y2="576" stroke="#1a2530" stroke-width="2"></line>
+        <g fill="none" stroke="#1a2530" stroke-width="2">
+          <circle cx="100" cy="588" r="6"></circle><circle cx="180" cy="588" r="6"></circle><circle cx="260" cy="588" r="6"></circle>
+          <circle cx="340" cy="588" r="6"></circle><circle cx="420" cy="588" r="6"></circle><circle cx="500" cy="588" r="6"></circle>
+          <circle cx="580" cy="588" r="6"></circle><circle cx="660" cy="588" r="6"></circle><circle cx="740" cy="588" r="6"></circle>
+          <circle cx="820" cy="588" r="6"></circle><circle cx="900" cy="588" r="6"></circle><circle cx="980" cy="588" r="6"></circle>
+          <circle cx="1060" cy="588" r="6"></circle><circle cx="1140" cy="588" r="6"></circle>
+        </g>
+        <line x1="66" y1="568" x2="404" y2="568" stroke="#5f6f77" stroke-width="2.4" stroke-dasharray="5 8"></line>
+        <line x1="836" y1="568" x2="1172" y2="568" stroke="#3d8bfd" stroke-width="2.6" stroke-dasharray="6 8"></line>
+
+        <text x="230" y="382" text-anchor="middle" fill="#2fe0c8" font-size="15" font-weight="600" letter-spacing=".18em">SUPPLIERS</text>
+        <text x="230" y="404" text-anchor="middle" fill="#8fa0a8" font-size="13.5">trades · machinery · materials — in</text>
+
+        <g stroke="#93a3ab" fill="none" stroke-width="2">
+          <circle cx="78" cy="486" r="9"></circle><path d="M71 479 A9 9 0 0 1 85 479" stroke-width="2.8"></path>
+          <path d="M78 495 V526 M78 502 L92 514 M78 502 L64 512 M78 526 L70 552 M78 526 L90 552"></path>
+          <circle cx="124" cy="492" r="9"></circle><path d="M117 485 A9 9 0 0 1 131 485" stroke-width="2.8"></path>
+          <path d="M124 501 V530 M124 508 L138 518 M124 508 L110 516 M124 530 L116 554 M124 530 L136 554"></path>
+        </g>
+        <rect x="90" y="512" width="15" height="10" rx="2" fill="#131c24" stroke="#5f6f77" stroke-width="1.6"></rect>
+        <g fill="#131c24" stroke="#5f6f77" stroke-width="1.8">
+          <rect x="164" y="530" width="34" height="24" rx="3"></rect>
+          <rect x="168" y="506" width="28" height="20" rx="3"></rect>
+        </g>
+        <g transform="translate(286,470) scale(-1,1)">
+          <rect x="4" y="30" width="56" height="26" rx="6" fill="#131c24" stroke="#5f6f77" stroke-width="1.8"></rect>
+          <rect x="34" y="10" width="24" height="22" rx="4" fill="#131c24" stroke="#5f6f77" stroke-width="1.8"></rect>
+          <rect x="0" y="58" width="66" height="14" rx="7" fill="#131c24" stroke="#5f6f77" stroke-width="1.8"></rect>
+          <circle cx="14" cy="65" r="4" fill="#5f6f77"></circle><circle cx="33" cy="65" r="4" fill="#5f6f77"></circle><circle cx="52" cy="65" r="4" fill="#5f6f77"></circle>
+        </g>
+        <g transform="translate(440,494) scale(-1,1)">
+          <rect x="42" y="16" width="96" height="46" rx="6" fill="#131c24" stroke="#5f6f77" stroke-width="1.8"></rect>
+          <rect x="0" y="30" width="42" height="32" rx="5" fill="#131c24" stroke="#5f6f77" stroke-width="1.8"></rect>
+          <rect x="10" y="36" width="16" height="12" rx="2" fill="#070c11"></rect>
+          <circle cx="26" cy="64" r="10" fill="#070c11" stroke="#5f6f77" stroke-width="1.6"></circle>
+          <circle cx="112" cy="64" r="10" fill="#070c11" stroke="#5f6f77" stroke-width="1.6"></circle>
+        </g>
+
+        <rect x="420" y="300" width="400" height="536" rx="24" fill="#0c141b" stroke="rgba(47,224,200,.55)" stroke-width="2.4"></rect>
+        <rect x="410" y="532" width="22" height="70" rx="8" fill="#04070a" stroke="rgba(47,224,200,.45)" stroke-width="1.4"></rect>
+        <rect x="808" y="532" width="22" height="70" rx="8" fill="#04070a" stroke="rgba(47,224,200,.45)" stroke-width="1.4"></rect>
+        <rect x="716" y="280" width="26" height="20" rx="4" fill="#0c141b" stroke="rgba(47,224,200,.45)" stroke-width="1.6"></rect>
+        <rect x="752" y="288" width="18" height="12" rx="3" fill="#0c141b" stroke="rgba(47,224,200,.45)" stroke-width="1.6"></rect>
+        <rect x="444" y="324" width="352" height="488" rx="18" fill="#060b10" stroke="#22303a" stroke-width="1.8"></rect>
+
+        <circle cx="620" cy="380" r="38" fill="url(#p6glow)"></circle>
+        <circle cx="620" cy="380" r="23" fill="#08201d" stroke="#2fe0c8" stroke-width="2.4"></circle>
+        <text x="620" y="385" text-anchor="middle" fill="#2fe0c8" font-size="13" font-weight="700">LLMs</text>
+        <text x="620" y="426" text-anchor="middle" fill="#8fa0a8" font-size="13">intelligence core</text>
+        <path d="M620 340 L620 306" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+        <path d="M598 392 C 534 396, 478 420, 466 452" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+        <path d="M620 432 L620 452" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+        <path d="M642 392 C 706 396, 762 420, 774 452" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+
+        <text x="620" y="447" text-anchor="middle" fill="#eef4f3" font-size="15" font-weight="700">AGENTS</text>
+        <rect x="458" y="456" width="98" height="50" rx="10" fill="#0d161e" stroke="#24313b" stroke-width="1.6"></rect>
+        <rect x="572" y="456" width="98" height="50" rx="10" fill="#0d161e" stroke="#24313b" stroke-width="1.6"></rect>
+        <rect x="686" y="456" width="98" height="50" rx="10" fill="#0d161e" stroke="#24313b" stroke-width="1.6"></rect>
+        <g transform="translate(474,470)" stroke="#2fe0c8" stroke-width="2" fill="none">
+          <line x1="11" y1="-1" x2="11" y2="2"></line><circle cx="11" cy="-4" r="2.6"></circle>
+          <rect x="0" y="2" width="22" height="17" rx="5.5"></rect>
+          <rect x="-4" y="7" width="4" height="7" rx="1.8"></rect><rect x="22" y="7" width="4" height="7" rx="1.8"></rect>
+          <rect x="6" y="7.5" width="3.4" height="6.5" rx="1.6" fill="#2fe0c8" stroke="none"></rect>
+          <rect x="12.6" y="7.5" width="3.4" height="6.5" rx="1.6" fill="#2fe0c8" stroke="none"></rect>
+        </g>
+        <g transform="translate(588,470)" stroke="#2fe0c8" stroke-width="2" fill="none">
+          <line x1="11" y1="-1" x2="11" y2="2"></line><circle cx="11" cy="-4" r="2.6"></circle>
+          <rect x="0" y="2" width="22" height="17" rx="5.5"></rect>
+          <rect x="-4" y="7" width="4" height="7" rx="1.8"></rect><rect x="22" y="7" width="4" height="7" rx="1.8"></rect>
+          <rect x="6" y="7.5" width="3.4" height="6.5" rx="1.6" fill="#2fe0c8" stroke="none"></rect>
+          <rect x="12.6" y="7.5" width="3.4" height="6.5" rx="1.6" fill="#2fe0c8" stroke="none"></rect>
+        </g>
+        <g transform="translate(702,470)" stroke="#2fe0c8" stroke-width="2" fill="none">
+          <line x1="11" y1="-1" x2="11" y2="2"></line><circle cx="11" cy="-4" r="2.6"></circle>
+          <rect x="0" y="2" width="22" height="17" rx="5.5"></rect>
+          <rect x="-4" y="7" width="4" height="7" rx="1.8"></rect><rect x="22" y="7" width="4" height="7" rx="1.8"></rect>
+          <rect x="6" y="7.5" width="3.4" height="6.5" rx="1.6" fill="#2fe0c8" stroke="none"></rect>
+          <rect x="12.6" y="7.5" width="3.4" height="6.5" rx="1.6" fill="#2fe0c8" stroke="none"></rect>
+        </g>
+        <g font-size="11.5" font-weight="600" fill="#93a3ab">
+          <text x="508" y="486">ESTIM.</text><text x="622" y="486">PROCUR.</text><text x="736" y="486">INVOIC.</text>
+        </g>
+
+        <path d="M507 506 C 516 516, 528 524, 536 530" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+        <path d="M621 506 L621 526" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+        <path d="M735 506 C 726 516, 714 524, 706 530" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+
+        <rect x="455" y="532" width="330" height="96" rx="14" fill="rgba(47,224,200,.07)" stroke="rgba(47,224,200,.55)" stroke-width="2"></rect>
+        <text x="620" y="556" text-anchor="middle" fill="#2fe0c8" font-size="15" font-weight="700">MCP</text>
+        <text x="620" y="577" text-anchor="middle" fill="#8fa0a8" font-size="11.5">the flow between agents &amp; model</text>
+        <text x="620" y="594" text-anchor="middle" fill="#8fa0a8" font-size="11.5">Model Context Protocol — a standard interface</text>
+        <text x="620" y="611" text-anchor="middle" fill="#8fa0a8" font-size="11.5">for agents to read data &amp; use the tools</text>
+
+        <path d="M540 628 C 528 640, 518 650, 514 660" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+        <path d="M620 628 L620 638" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+        <path d="M700 628 C 712 640, 722 650, 726 660" stroke="#2fe0c8" stroke-width="2" fill="none" stroke-dasharray="4 6" opacity=".85"></path>
+
+        <g stroke="rgba(47,224,200,.45)" stroke-width="1.3">
+          <path d="M512 670 L618 654 M618 654 L728 670 M512 670 L528 740 M618 654 L622 754 M728 670 L716 736 M528 740 L622 754 M622 754 L716 736 M512 670 L622 754"></path>
+        </g>
+        <g fill="#2fe0c8">
+          <circle cx="512" cy="670" r="6"></circle><circle cx="618" cy="654" r="6"></circle><circle cx="728" cy="670" r="6"></circle>
+          <circle cx="528" cy="740" r="6"></circle><circle cx="622" cy="754" r="6"></circle><circle cx="716" cy="736" r="6"></circle>
+        </g>
+        <g font-size="12" fill="#c4d2d6">
+          <text x="502" y="662" text-anchor="end">Rates</text>
+          <text x="618" y="642" text-anchor="middle">Jobs</text>
+          <text x="738" y="662" text-anchor="start">Suppliers</text>
+          <text x="516" y="754" text-anchor="end">Clients</text>
+          <text x="622" y="772" text-anchor="middle">Rules</text>
+          <text x="728" y="750" text-anchor="start">History</text>
+        </g>
+        <text x="620" y="794" text-anchor="middle" fill="#eef4f3" font-size="14.5" font-weight="700">THE MODEL</text>
+        <text x="620" y="809" text-anchor="middle" fill="#8fa0a8" font-size="11.5">your business as connected data</text>
+
+        <rect x="560" y="232" width="120" height="68" rx="14" fill="#0c141b" stroke="rgba(47,224,200,.55)" stroke-width="2"></rect>
+        <rect x="574" y="244" width="92" height="44" rx="8" fill="#060b10" stroke="#22303a" stroke-width="1.4"></rect>
+        <circle cx="604" cy="262" r="4.5" fill="#2fe0c8"></circle>
+        <circle cx="636" cy="262" r="4.5" fill="#2fe0c8"></circle>
+        <path d="M602 276 Q620 284 638 276" stroke="#2fe0c8" stroke-width="2" fill="none"></path>
+        <line x1="620" y1="232" x2="620" y2="214" stroke="#33424c" stroke-width="2.4"></line>
+        <circle cx="620" cy="210" r="4.5" fill="#2fe0c8"></circle>
+
+        <g stroke="#c4d2d6" fill="none" stroke-width="2">
+          <circle cx="472" cy="266" r="8"></circle><path d="M460 298 C460 282 484 282 484 298"></path>
+          <circle cx="508" cy="266" r="8"></circle><path d="M496 298 C496 282 520 282 520 298"></path>
+        </g>
+        <g transform="translate(483,274)">
+          <rect width="22" height="15" rx="2" fill="#0a1015" stroke="rgba(47,224,200,.5)" stroke-width="1.2"></rect>
+          <path d="M3 5 h16 M3 8.5 h10 M3 12 h13" stroke="rgba(47,224,200,.5)" stroke-width=".8"></path>
+        </g>
+        <text x="452" y="232" text-anchor="end" fill="#2fe0c8" font-size="14" font-weight="600" letter-spacing=".16em">PANTAIA</text>
+        <text x="452" y="251" text-anchor="end" fill="#8fa0a8" font-size="12.5">we analyse the business,</text>
+        <text x="452" y="267" text-anchor="end" fill="#8fa0a8" font-size="12.5">build &amp; tune the machine</text>
+
+        <text x="620" y="32" text-anchor="middle" fill="#eef4f3" font-size="14.5" font-weight="700">YOUR TEAM</text>
+        <text x="620" y="50" text-anchor="middle" fill="#8fa0a8" font-size="12.5">approve &amp; steer — no new hires for busywork</text>
+        <g transform="translate(586,58)">
+          <g stroke="#c4d2d6" fill="none" stroke-width="2">
+            <circle cx="16" cy="12" r="9"></circle><path d="M0 42 C0 28 32 28 32 42"></path>
+            <circle cx="52" cy="12" r="9"></circle><path d="M36 42 C36 28 68 28 68 42"></path>
+          </g>
+          <rect x="18" y="48" width="34" height="22" rx="4" fill="#0a1015" stroke="#c4d2d6" stroke-width="1.5"></rect>
+          <path d="M24 56 h22 M24 62 h14" stroke="#2fe0c8" stroke-width="1.6"></path>
+        </g>
+        <path d="M620 148 L620 134" stroke="#93a3ab" stroke-width="1.8" fill="none" stroke-dasharray="3 6" marker-end="url(#p6arrw)"></path>
+        <path d="M620 188 L620 202" stroke="#93a3ab" stroke-width="1.8" fill="none" stroke-dasharray="3 6" marker-end="url(#p6arrw)"></path>
+        <text x="620" y="166" text-anchor="middle" fill="#eef4f3" font-size="13.5" font-weight="700">UI</text>
+        <text x="620" y="182" text-anchor="middle" fill="#8fa0a8" font-size="12">the control room — your team's window</text>
+
+        <text x="1000" y="382" text-anchor="middle" fill="#3d8bfd" font-size="15" font-weight="600" letter-spacing=".18em">CLIENTS</text>
+        <text x="1000" y="404" text-anchor="middle" fill="#8fa0a8" font-size="13.5">projects delivered · on time · on margin — out</text>
+
+        <g transform="translate(846,470)">
+          <rect x="0" y="30" width="84" height="60" fill="#0d141c" stroke="rgba(61,139,253,.6)" stroke-width="2"></rect>
+          <path d="M-8 30 L42 -6 L92 30 Z" fill="#101822" stroke="rgba(61,139,253,.6)" stroke-width="2"></path>
+          <rect x="34" y="58" width="18" height="32" fill="rgba(61,139,253,.16)" stroke="rgba(61,139,253,.5)" stroke-width="1.2"></rect>
+          <rect x="10" y="42" width="16" height="13" fill="rgba(61,139,253,.16)" stroke="rgba(61,139,253,.5)" stroke-width="1.2"></rect>
+          <rect x="60" y="42" width="16" height="13" fill="rgba(61,139,253,.16)" stroke="rgba(61,139,253,.5)" stroke-width="1.2"></rect>
+        </g>
+        <g transform="translate(952,462)">
+          <rect x="0" y="0" width="104" height="98" fill="#0d141c" stroke="rgba(61,139,253,.6)" stroke-width="2"></rect>
+          <g fill="#3d8bfd">
+            <rect x="46" y="10" width="12" height="30"></rect>
+            <rect x="37" y="19" width="30" height="12"></rect>
+          </g>
+          <g fill="rgba(61,139,253,.16)" stroke="rgba(61,139,253,.45)" stroke-width="1">
+            <rect x="12" y="52" width="20" height="15"></rect><rect x="42" y="52" width="20" height="15"></rect><rect x="72" y="52" width="20" height="15"></rect>
+            <rect x="42" y="76" width="20" height="22"></rect>
+          </g>
+        </g>
+        <g transform="translate(1078,446)">
+          <rect x="0" y="0" width="72" height="114" fill="#0d141c" stroke="rgba(61,139,253,.6)" stroke-width="2"></rect>
+          <g fill="rgba(61,139,253,.16)" stroke="rgba(61,139,253,.45)" stroke-width="1">
+            <rect x="10" y="12" width="20" height="15"></rect><rect x="42" y="12" width="20" height="15"></rect>
+            <rect x="10" y="40" width="20" height="15"></rect><rect x="42" y="40" width="20" height="15"></rect>
+            <rect x="10" y="68" width="20" height="15"></rect><rect x="42" y="68" width="20" height="15"></rect>
+            <rect x="26" y="92" width="20" height="22"></rect>
+          </g>
+        </g>
+        <g stroke="#dbe6ea" fill="none" stroke-width="2">
+          <circle cx="1184" cy="530" r="10"></circle><path d="M1168 560 C1168 540 1200 540 1200 560"></path>
+        </g>
+
+        <path d="M940 592 C 1010 770, 800 878, 640 878 C 555 878, 522 864, 518 846" stroke="#2fe0c8" stroke-width="2.6" fill="none" stroke-dasharray="4 10" marker-end="url(#p6arr)"></path>
+        <text x="700" y="900" text-anchor="middle" fill="#2fe0c8" font-size="14">every delivered project feeds back</text>
+        <text x="700" y="916" text-anchor="middle" fill="#8fa0a8" font-size="11.5">the machine gets smarter with every job</text>
+      </svg>
+                        </div>
+                        <div class="text-center mb-8">
+                            <p class="text-xs uppercase tracking-[0.18em] text-primary-400 mb-2">End to end</p>
+                            <h4 class="text-xl md:text-2xl font-bold text-white">Zoom out: how it runs your work.</h4>
+                            <p class="text-gray-500 text-sm mt-2 max-w-2xl mx-auto">Mess in, model at the centre, agents around it, clean outputs delivered &mdash; and the loop that compounds. Every finished job writes back. Next estimate beats the last. That's the moat.</p>
+                        </div>
+                        <div class="diagram">
+                            <svg viewBox="0 0 1240 800" style="width:100%;height:auto;display:block" font-family="Inter, sans-serif" role="img" aria-label="How Satoris works end to end: scattered business data becomes a structured model, AI agents work on it, your team steers, clean outputs are delivered, and every finished job writes back.">
+        <defs>
+          <radialGradient id="p7glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(47,224,200,.16)"></stop>
+            <stop offset="70%" stop-color="rgba(47,224,200,.05)"></stop>
+            <stop offset="100%" stop-color="rgba(47,224,200,0)"></stop>
+          </radialGradient>
+          <radialGradient id="p7fill" cx="50%" cy="42%" r="70%">
+            <stop offset="0%" stop-color="#0e1a1c"></stop>
+            <stop offset="100%" stop-color="#0a1114"></stop>
+          </radialGradient>
+          <marker id="p7arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0.5 L7.5,4 L0,7.5 Z" fill="#2fe0c8"></path></marker>
+          <marker id="p7arrb" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0.5 L7.5,4 L0,7.5 Z" fill="#3d8bfd"></path></marker>
+          <marker id="p7arrg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0.5 L7.5,4 L0,7.5 Z" fill="#5f6f77"></path></marker>
+          <marker id="p7arrw" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0,0.5 L7.5,4 L0,7.5 Z" fill="#8fa0a8"></path></marker>
+        </defs>
+
+        <text x="128" y="148" text-anchor="middle" fill="#5f6f77" font-size="15" font-weight="600" letter-spacing=".2em">TODAY</text>
+        <text x="128" y="168" text-anchor="middle" fill="#8fa0a8" font-size="12.5">scattered · manual · in heads</text>
+
+        <g transform="translate(60,200) rotate(-5)">
+          <rect width="86" height="60" rx="6" fill="#111a22" stroke="#5f6f77" stroke-width="1.6"></rect>
+          <path d="M0 16 H86 M0 31 H86 M0 46 H86 M29 16 V60 M58 16 V60" stroke="#5f6f77" fill="none" stroke-width="1.2" opacity=".55"></path>
+          <text x="43" y="78" text-anchor="middle" fill="#8fa0a8" font-size="12">spreadsheets</text>
+        </g>
+        <g transform="translate(150,292) rotate(4)">
+          <rect x="8" y="-6" width="58" height="72" rx="5" fill="#111a22" stroke="#5f6f77" stroke-width="1.6" opacity=".5"></rect>
+          <rect width="58" height="72" rx="5" fill="#111a22" stroke="#5f6f77" stroke-width="1.6"></rect>
+          <path d="M12 16 H46 M12 28 H46 M12 40 H34" stroke="#5f6f77" fill="none" stroke-width="1.4" opacity=".6"></path>
+          <text x="29" y="62" text-anchor="middle" fill="#5f6f77" font-size="11" font-weight="600">PDF</text>
+          <text x="29" y="92" text-anchor="middle" fill="#8fa0a8" font-size="12">old quotes</text>
+        </g>
+        <g transform="translate(52,330) rotate(-3)">
+          <rect width="76" height="50" rx="6" fill="#111a22" stroke="#5f6f77" stroke-width="1.6"></rect>
+          <path d="M4 8 L38 32 L72 8" stroke="#5f6f77" fill="none" stroke-width="1.6"></path>
+          <text x="38" y="68" text-anchor="middle" fill="#8fa0a8" font-size="12">email threads</text>
+        </g>
+        <g transform="translate(84,452)">
+          <circle cx="30" cy="14" r="12" stroke="#5f6f77" fill="none" stroke-width="1.6"></circle>
+          <path d="M8 52 C8 34 52 34 52 52" stroke="#5f6f77" fill="none" stroke-width="1.6"></path>
+          <circle cx="62" cy="6" r="3" stroke="#5f6f77" fill="none" stroke-width="1.4" stroke-dasharray="2 3"></circle>
+          <circle cx="74" cy="-6" r="5" stroke="#5f6f77" fill="none" stroke-width="1.4" stroke-dasharray="2 3"></circle>
+          <circle cx="90" cy="-20" r="7" stroke="#5f6f77" fill="none" stroke-width="1.4" stroke-dasharray="2 3"></circle>
+          <text x="34" y="74" text-anchor="middle" fill="#8fa0a8" font-size="12">the founder's head</text>
+          <text x="34" y="90" text-anchor="middle" fill="#8fa0a8" font-size="12">(rates · rules · gut feel)</text>
+        </g>
+        <g transform="translate(160,556) rotate(6)">
+          <rect width="64" height="48" rx="6" fill="#111a22" stroke="#5f6f77" stroke-width="1.6"></rect>
+          <circle cx="18" cy="18" r="6" stroke="#5f6f77" fill="none" stroke-width="1.4"></circle>
+          <path d="M6 40 L24 26 L38 36 L50 24 L60 32" stroke="#5f6f77" fill="none" stroke-width="1.4"></path>
+          <text x="32" y="66" text-anchor="middle" fill="#8fa0a8" font-size="12">site photos</text>
+        </g>
+
+        <path d="M158 246 C 260 270, 330 320, 398 358" stroke="#5f6f77" stroke-width="2" fill="none" stroke-dasharray="4 7" marker-end="url(#p7arrg)"></path>
+        <path d="M218 330 C 290 350, 340 370, 396 384" stroke="#5f6f77" stroke-width="2" fill="none" stroke-dasharray="4 7" marker-end="url(#p7arrg)"></path>
+        <path d="M132 366 C 240 400, 320 400, 396 402" stroke="#5f6f77" stroke-width="2" fill="none" stroke-dasharray="4 7" marker-end="url(#p7arrg)"></path>
+        <path d="M152 480 C 260 460, 330 440, 398 424" stroke="#5f6f77" stroke-width="2" fill="none" stroke-dasharray="4 7" marker-end="url(#p7arrg)"></path>
+        <path d="M226 572 C 300 540, 350 490, 400 448" stroke="#5f6f77" stroke-width="2" fill="none" stroke-dasharray="4 7" marker-end="url(#p7arrg)"></path>
+        <text x="308" y="286" text-anchor="middle" fill="#2fe0c8" font-size="13.5">structured once</text>
+        <text x="308" y="304" text-anchor="middle" fill="#8fa0a8" font-size="12">AI extracts it — you don't retype it</text>
+
+        <circle cx="590" cy="400" r="230" fill="url(#p7glow)"></circle>
+        <circle cx="590" cy="400" r="150" fill="url(#p7fill)" stroke="#2fe0c8" stroke-width="2"></circle>
+        <circle cx="590" cy="400" r="162" fill="none" stroke="rgba(47,224,200,.5)" stroke-width="1.2" stroke-dasharray="2 6"></circle>
+
+        <g stroke="rgba(47,224,200,.45)" stroke-width="1.3">
+          <path d="M540 345 L635 360 M540 345 L520 415 M635 360 L655 430 M520 415 L590 455 M655 430 L590 455 M540 345 L590 455 M635 360 L520 415"></path>
+        </g>
+        <circle cx="540" cy="345" r="6" fill="#2fe0c8"></circle><text x="540" y="326" text-anchor="middle" fill="#eef4f3" font-size="13" font-weight="600">Rates</text>
+        <circle cx="635" cy="360" r="6" fill="#2fe0c8"></circle><text x="643" y="342" text-anchor="middle" fill="#eef4f3" font-size="13" font-weight="600">Jobs</text>
+        <circle cx="520" cy="415" r="6" fill="#2fe0c8"></circle><text x="508" y="398" text-anchor="middle" fill="#eef4f3" font-size="13" font-weight="600">Suppliers</text>
+        <circle cx="655" cy="430" r="6" fill="#2fe0c8"></circle><text x="665" y="414" text-anchor="middle" fill="#eef4f3" font-size="13" font-weight="600">Clients</text>
+        <circle cx="590" cy="455" r="6" fill="#2fe0c8"></circle><text x="590" y="480" text-anchor="middle" fill="#eef4f3" font-size="13" font-weight="600">Rules</text>
+        <text x="590" y="518" text-anchor="middle" fill="#eef4f3" font-size="17" font-weight="700" font-family="Hanken Grotesk, sans-serif" letter-spacing=".04em">THE MODEL</text>
+        <text x="590" y="537" text-anchor="middle" fill="#8fa0a8" font-size="12.5">your business as connected data</text>
+
+        <g transform="translate(520,148)">
+          <rect width="142" height="34" rx="17" fill="#0c141b" stroke="rgba(47,224,200,.55)" stroke-width="1.8"></rect>
+          <circle cx="19" cy="17" r="4.5" fill="#2fe0c8"></circle>
+          <text x="34" y="22" fill="#eef4f3" font-size="13.5" font-weight="600">Estimating</text>
+        </g>
+        <path d="M591 186 L591 226" stroke="#2fe0c8" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arr)" marker-start="url(#p7arr)"></path>
+        <g transform="translate(330,208)">
+          <rect width="138" height="34" rx="17" fill="#0c141b" stroke="rgba(47,224,200,.55)" stroke-width="1.8"></rect>
+          <circle cx="19" cy="17" r="4.5" fill="#2fe0c8"></circle>
+          <text x="34" y="22" fill="#eef4f3" font-size="13.5" font-weight="600">Variations</text>
+        </g>
+        <path d="M430 246 L472 288" stroke="#2fe0c8" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arr)" marker-start="url(#p7arr)"></path>
+        <g transform="translate(766,212)">
+          <rect width="102" height="34" rx="17" fill="#0c141b" stroke="rgba(47,224,200,.55)" stroke-width="1.8"></rect>
+          <circle cx="19" cy="17" r="4.5" fill="#2fe0c8"></circle>
+          <text x="34" y="22" fill="#eef4f3" font-size="13.5" font-weight="600">Sales</text>
+        </g>
+        <path d="M762 252 L712 294" stroke="#2fe0c8" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arr)" marker-start="url(#p7arr)"></path>
+        <g transform="translate(512,632)">
+          <rect width="156" height="34" rx="17" fill="#0c141b" stroke="rgba(47,224,200,.55)" stroke-width="1.8"></rect>
+          <circle cx="19" cy="17" r="4.5" fill="#2fe0c8"></circle>
+          <text x="34" y="22" fill="#eef4f3" font-size="13.5" font-weight="600">Procurement</text>
+        </g>
+        <path d="M591 628 L591 576" stroke="#2fe0c8" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arr)" marker-start="url(#p7arr)"></path>
+        <g transform="translate(322,556)">
+          <rect width="128" height="34" rx="17" fill="#0c141b" stroke="rgba(47,224,200,.55)" stroke-width="1.8"></rect>
+          <circle cx="19" cy="17" r="4.5" fill="#2fe0c8"></circle>
+          <text x="34" y="22" fill="#eef4f3" font-size="13.5" font-weight="600">Invoicing</text>
+        </g>
+        <path d="M432 556 L474 512" stroke="#2fe0c8" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arr)" marker-start="url(#p7arr)"></path>
+        <g transform="translate(760,552)">
+          <rect width="132" height="34" rx="17" fill="#0c141b" stroke="rgba(47,224,200,.55)" stroke-width="1.8"></rect>
+          <circle cx="19" cy="17" r="4.5" fill="#2fe0c8"></circle>
+          <text x="34" y="22" fill="#eef4f3" font-size="13.5" font-weight="600">O&amp;M Manual</text>
+        </g>
+        <path d="M758 550 L710 508" stroke="#2fe0c8" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arr)" marker-start="url(#p7arr)"></path>
+
+        <text x="590" y="106" text-anchor="middle" fill="#2fe0c8" font-size="15" font-weight="600" letter-spacing=".2em">AGENTS</text>
+        <text x="590" y="126" text-anchor="middle" fill="#8fa0a8" font-size="12.5">they read the model, do the task, write back — they never dig through files</text>
+
+        <g transform="translate(985,110)">
+          <g stroke="#c4d2d6" fill="none" stroke-width="1.8">
+            <circle cx="16" cy="12" r="9"></circle><path d="M0 42 C0 28 32 28 32 42"></path>
+            <circle cx="52" cy="12" r="9"></circle><path d="M36 42 C36 28 68 28 68 42"></path>
+          </g>
+          <text x="34" y="64" text-anchor="middle" fill="#eef4f3" font-size="13.5" font-weight="700">YOUR TEAM</text>
+          <text x="34" y="82" text-anchor="middle" fill="#8fa0a8" font-size="12">approves &amp; steers —</text>
+          <text x="34" y="97" text-anchor="middle" fill="#8fa0a8" font-size="12">no new hires for busywork</text>
+        </g>
+        <path d="M990 145 C 920 158, 885 190, 866 212" stroke="#8fa0a8" stroke-width="1.8" fill="none" stroke-dasharray="3 6" marker-end="url(#p7arrw)"></path>
+        <path d="M1000 172 C 940 232, 780 176, 672 170" stroke="#8fa0a8" stroke-width="1.8" fill="none" stroke-dasharray="3 6" marker-end="url(#p7arrw)"></path>
+
+        <text x="1088" y="266" text-anchor="middle" fill="#3d8bfd" font-size="15" font-weight="600" letter-spacing=".2em">DELIVERED</text>
+        <text x="1088" y="286" text-anchor="middle" fill="#8fa0a8" font-size="12.5">on time, consistent, branded</text>
+
+        <g transform="translate(1010,304)">
+          <rect width="156" height="40" rx="8" fill="#0d141c" stroke="rgba(61,139,253,.5)" stroke-width="1.6"></rect>
+          <path d="M14 12 h16 M14 20 h22 M14 28 h12" stroke="#3d8bfd" stroke-width="1.6" opacity=".7"></path>
+          <text x="46" y="25" fill="#dbe6ea" font-size="12.5" font-weight="600">Quotes out fast</text>
+        </g>
+        <g transform="translate(1010,356)">
+          <rect width="156" height="40" rx="8" fill="#0d141c" stroke="rgba(61,139,253,.5)" stroke-width="1.6"></rect>
+          <path d="M14 12 h16 M14 20 h22 M14 28 h12" stroke="#3d8bfd" stroke-width="1.6" opacity=".7"></path>
+          <text x="46" y="25" fill="#dbe6ea" font-size="12.5" font-weight="600">POs &amp; call-offs</text>
+        </g>
+        <g transform="translate(1010,408)">
+          <rect width="156" height="40" rx="8" fill="#0d141c" stroke="rgba(61,139,253,.5)" stroke-width="1.6"></rect>
+          <g stroke="#3d8bfd" stroke-width="3" opacity=".7">
+            <path d="M15 30 v-8 M23 30 v-14 M31 30 v-5 M39 30 v-11"></path>
+          </g>
+          <text x="50" y="25" fill="#dbe6ea" font-size="12.5" font-weight="600">Live margin</text>
+        </g>
+        <g transform="translate(1010,460)">
+          <rect width="156" height="40" rx="8" fill="#0d141c" stroke="rgba(61,139,253,.5)" stroke-width="1.6"></rect>
+          <path d="M14 12 h16 M14 20 h22 M14 28 h12" stroke="#3d8bfd" stroke-width="1.6" opacity=".7"></path>
+          <text x="46" y="25" fill="#dbe6ea" font-size="12.5" font-weight="600">O&amp;M handover</text>
+        </g>
+
+        <path d="M745 372 C 850 350, 920 336, 1004 326" stroke="#3d8bfd" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arrb)"></path>
+        <path d="M752 396 C 860 386, 930 380, 1004 377" stroke="#3d8bfd" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arrb)"></path>
+        <path d="M752 420 C 860 424, 930 427, 1004 429" stroke="#3d8bfd" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arrb)"></path>
+        <path d="M745 444 C 850 462, 920 472, 1004 480" stroke="#3d8bfd" stroke-width="2.2" fill="none" stroke-dasharray="5 7" marker-end="url(#p7arrb)"></path>
+
+        <path d="M1088 512 C 1100 640, 900 736, 700 700 C 620 686, 596 640, 592 586" stroke="#2fe0c8" stroke-width="2.6" fill="none" stroke-dasharray="4 10" marker-end="url(#p7arr)"></path>
+        <text x="905" y="748" text-anchor="middle" fill="#2fe0c8" font-size="14">every finished job writes back</text>
+        <text x="905" y="766" text-anchor="middle" fill="#8fa0a8" font-size="12">the model sharpens — next estimate beats the last</text>
+      </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Dileo Seminuevos -->
+            <div class="mb-10 reveal">
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-6 sm:p-8 md:p-10">
+                    <div class="grid lg:grid-cols-5 gap-10 items-center">
+                        <div class="lg:col-span-2">
+                            <span class="inline-block px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06] mb-4">Client work &middot; Automotive resale platform</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">Dileo Seminuevos</h3>
+                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-4">Mobility &amp; car-subscription company &middot; Monterrey, MX &middot; Pilot in production</p>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                Dileo is the single legal owner of every car it resells, with a complete service history and a proper invoice &mdash; a moat no used-car lot can copy. But the resale flow ran on WhatsApp threads through a chain of intermediaries, adding hours of latency to every offer.
+                            </p>
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                We built the layer their commercial team actually uses: consigning clients and brokers transact directly, while Dileo's staff supervise instead of relaying messages.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">Seller portal: market value, where it's published, offers, floor-price range</span></li>
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">Broker catalog with comparable-price references and formal offers</span></li>
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">Role-based access (admin, consultant, broker) over the inventory system of record</span></li>
+                                <li class="flex items-start gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 shrink-0"></span><span class="text-gray-300 text-sm">WhatsApp-first: offers, showings, odometer photos, weekly summaries</span></li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <!-- Flow: seller ⇄ platform ⇄ broker -->
                             <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
-                                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Structural insight</h4>
-                                <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                                    Pakoa proved that when incentives are aligned correctly, decentralized networks scale. Multi-level commission structures, honeycomb community visualization, and real-time performance dashboards created a self-sustaining growth engine.
-                                </p>
-                                <p class="text-gray-400 text-sm leading-relaxed">
-                                    The platform is still operating today &mdash; the same incentive architecture continues to drive the business years after handover.
-                                </p>
+                                <p class="text-xs uppercase tracking-wider text-gray-500 mb-5">Before: a relay chain &middot; After: direct, supervised</p>
+                                <div class="grid md:grid-cols-3 gap-4 items-stretch">
+                                    <div class="rounded-lg border border-white/[0.06] bg-dark-900 p-4">
+                                        <p class="text-[10px] uppercase tracking-wider text-primary-400 mb-1">Consigning client</p>
+                                        <p class="text-white text-sm font-semibold mb-2">Sets price &amp; floor</p>
+                                        <p class="text-gray-400 text-xs leading-relaxed">Sees value, market references and every offer. Accepts, rejects or counters &mdash; on WhatsApp.</p>
+                                    </div>
+                                    <div class="rounded-lg border border-primary-500/30 bg-primary-500/[0.06] p-4 flex flex-col justify-center">
+                                        <p class="text-[10px] uppercase tracking-wider text-primary-400 mb-1">Dileo platform</p>
+                                        <p class="text-white text-sm font-semibold mb-2">Referee, not relay</p>
+                                        <p class="text-gray-400 text-xs leading-relaxed">Showings only when the offer is in range. Staff watch the deal and nudge when it stalls.</p>
+                                    </div>
+                                    <div class="rounded-lg border border-white/[0.06] bg-dark-900 p-4">
+                                        <p class="text-[10px] uppercase tracking-wider text-accent-400 mb-1">Broker</p>
+                                        <p class="text-white text-sm font-semibold mb-2">Makes a formal offer</p>
+                                        <p class="text-gray-400 text-xs leading-relaxed">Browses inventory as if it were their own, with comparable prices from 180 days of market data.</p>
+                                    </div>
+                                </div>
+                                <div class="mt-5 grid grid-cols-3 gap-4 text-center">
+                                    <div><p class="text-lg font-bold text-white">Minutes</p><p class="text-[11px] text-gray-500">offer to answer, not hours</p></div>
+                                    <div><p class="text-lg font-bold text-white">Hundreds</p><p class="text-[11px] text-gray-500">of cars in one pipeline</p></div>
+                                    <div><p class="text-lg font-bold text-white">3 roles</p><p class="text-[11px] text-gray-500">one system of record</p></div>
+                                </div>
                             </div>
+                            <!-- DILEO_SHOTS -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3: OneContact Colombia -->
-            <div class="mb-12 reveal">
-                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-8 md:p-10">
-                    <div class="flex flex-col md:flex-row md:items-center gap-6">
-                        <div class="flex-1">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06]">
-                                    Client work &middot; AI Business Intelligence
-                                </span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">OneContact Colombia</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">
-                                Built an AI-integrated analytics platform connecting Odoo ERP with Power BI, enabling natural language queries via Claude API. Achieved 85% reduction in report generation time with 24/7 real-time monitoring. MCP architecture for AI-database integration.
+            <!-- 5. Field Services Desk -->
+            <div class="mb-10 reveal">
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-6 sm:p-8 md:p-10">
+                    <div class="grid lg:grid-cols-5 gap-10 items-center">
+                        <div class="lg:col-span-3 lg:order-1 order-2 space-y-4">
+                            <div class="shot"><img src="/img/work/fieldservice-1.webp" width="1600" height="831" alt="Field Services Desk — coordinator view" loading="lazy" decoding="async"></div>
+                            <div class="shot"><img src="/img/work/fieldservice-2.webp" width="1600" height="855" alt="Field Services Desk — engineer ticket flow" loading="lazy" decoding="async"></div>
+                        </div>
+                        <div class="lg:col-span-2 lg:order-2 order-1">
+                            <span class="inline-block px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06] mb-4">Client work &middot; IT field operations portal</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">Field Services Desk</h3>
+                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-4">IT services provider &middot; Mexico &middot; Live, in production</p>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                A modern service-desk portal for field engineers and their coordinators &mdash; tickets, assignments and closure flows in an interface built for the field, with six role-based experiences from engineer to coordinator.
+                            </p>
+                            <p class="text-gray-400 leading-relaxed">
+                                Runs on top of the client's existing ITSM of record &mdash; no rip-and-replace, adopted by the team in days.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-2 md:w-48 shrink-0">
-                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Odoo</span>
-                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Power BI</span>
-                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Claude API</span>
-                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">MCP</span>
-                            <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Financial Reporting -->
+            <div class="mb-10 reveal">
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-6 sm:p-8 md:p-10">
+                    <div class="grid lg:grid-cols-5 gap-10 items-start mb-8">
+                        <div class="lg:col-span-2">
+                            <span class="inline-block px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06] mb-4">Client work &middot; Financial analytics platform</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">Financial Reporting</h3>
+                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-4">Privately-held company &middot; Mexico &middot; Live</p>
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                The company's consolidated financial statements, turned into interactive executive dashboards &mdash; built as a forensic instrument for an accounting cleanup and the foundation for a live cash-flow view. Wired to the ERP (Odoo among them) so every dashboard reads from the system of record.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div><p class="text-white text-sm font-semibold mb-1">Penny-exact</p><p class="text-gray-500 text-xs leading-relaxed">An extraction pipeline that matches the books, always.</p></div>
+                                <div><p class="text-white text-sm font-semibold mb-1">Forensic clarity</p><p class="text-gray-500 text-xs leading-relaxed">Ledger inconsistencies become visible at a glance.</p></div>
+                                <div><p class="text-white text-sm font-semibold mb-1">Read-only by design</p><p class="text-gray-500 text-xs leading-relaxed">The accounting system stays the source of truth.</p></div>
+                                <div><p class="text-white text-sm font-semibold mb-1">Path to live cash flow</p><p class="text-gray-500 text-xs leading-relaxed">The antechamber to a real-time cash-flow statement.</p></div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3 space-y-4">
+                            <div class="shot"><img src="/img/work/finance-1.webp" width="1600" height="1132" alt="Financial Reporting — executive dashboard" loading="lazy" decoding="async"></div>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="shot"><img src="/img/work/finance-2.webp" width="1600" height="1163" alt="Financial Reporting — statement reconciliation" loading="lazy" decoding="async"></div>
+                        <div class="shot self-start"><img src="/img/work/finance-3.webp" width="1600" height="525" alt="Financial Reporting — cash-flow view" loading="lazy" decoding="async"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Coverage Agent -->
+            <div class="mb-10 reveal">
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-6 sm:p-8 md:p-10">
+                    <div class="grid lg:grid-cols-5 gap-10 items-center">
+                        <div class="lg:col-span-2">
+                            <span class="inline-block px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06] mb-4">Client work &middot; Telecom services automation</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">Coverage Agent</h3>
+                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-4">Major Mexican telecom operator &middot; Working prototype</p>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                An agent that answers &ldquo;can we serve this address?&rdquo; by operating the operator's own network-inventory GIS &mdash; replacing a manual, per-address lookup done by sales teams.
+                            </p>
+                            <p class="text-gray-400 leading-relaxed">
+                                No integration project: it drives the existing tools, the way a person would. Your legacy systems don't block AI adoption &mdash; agents can operate what you already run.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="grid md:grid-cols-3 gap-4 items-stretch">
+                                <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-5">
+                                    <p class="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Input</p>
+                                    <p class="text-white font-semibold mb-2">Lead comes in</p>
+                                    <p class="text-gray-400 text-xs leading-relaxed">An address from sales &mdash; &ldquo;can you serve me here?&rdquo;</p>
+                                </div>
+                                <div class="rounded-xl border border-primary-500/30 bg-primary-500/[0.06] p-5">
+                                    <p class="text-[10px] uppercase tracking-wider text-primary-400 mb-1">Agent &middot; checks the systems</p>
+                                    <p class="text-white font-semibold mb-2">Operates the operator's tools</p>
+                                    <ul class="text-gray-400 text-xs leading-relaxed space-y-1">
+                                        <li>&rsaquo; corporate SSO login</li>
+                                        <li>&rsaquo; geocode the address</li>
+                                        <li>&rsaquo; query network-inventory GIS</li>
+                                    </ul>
+                                </div>
+                                <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-5">
+                                    <p class="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Output</p>
+                                    <p class="text-white font-semibold mb-2">Verdict, in minutes</p>
+                                    <p class="text-xs leading-relaxed mb-1"><span class="text-primary-400">&#9679;</span> <span class="text-gray-300">Viable</span> <span class="text-gray-500">&mdash; coverage at the address</span></p>
+                                    <p class="text-xs leading-relaxed"><span class="text-gray-600">&#9679;</span> <span class="text-gray-300">Not viable</span> <span class="text-gray-500">&mdash; outside the network</span></p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-600 mt-4">Demo: internal system &mdash; on request.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 4: Westpark Procurement -->
+            <!-- 8. Pakoa -->
             <div class="reveal">
-                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-8 md:p-10">
-                    <div class="grid lg:grid-cols-2 gap-10 items-start">
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06]">
-                                    Client work &middot; Custom Procurement Platform
-                                </span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-4">Westpark Procurement</h3>
-                            <p class="text-gray-400 text-base leading-relaxed mb-6">
-                                End-to-end procurement platform for a UK construction company &mdash; replacing their Monday.com workflow with a custom system. Manages the full lifecycle from jobs and cost-sheet uploads through call-offs, AI-generated purchase orders, and invoice matching, with real-time margin tracking and automatic variation handling.
+                <div class="rounded-2xl border border-white/[0.06] bg-dark-900 p-6 sm:p-8 md:p-10">
+                    <div class="grid lg:grid-cols-5 gap-10 items-start">
+                        <div class="lg:col-span-2">
+                            <span class="inline-block px-3 py-1 rounded-full bg-dark-800 text-gray-400 text-sm font-medium border border-white/[0.06] mb-4">Client work &middot; Distribution platform</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">Pakoa</h3>
+                            <p class="text-xs uppercase tracking-wider text-gray-500 mb-4">Telecom sales distribution &middot; Live &mdash; 5+ years</p>
+                            <p class="text-gray-400 leading-relaxed mb-6">
+                                Gamified, decentralized growth platform for telecom sales distribution. When incentives are aligned correctly, decentralized networks scale &mdash; multi-level commissions, honeycomb community visualization and real-time dashboards created a self-sustaining growth engine that still runs today, years after handover.
                             </p>
-
-                            <div class="space-y-3 mb-6">
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">AI cost-sheet parsing with automatic variation deltas on every re-upload</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">Auto-generated PO PDFs with sequential numbering on call-off submission</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">Invoice matching with tolerance-based auto-match and role-routed approvals</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">Live job-margin tracking: budget vs. committed vs. actual with red-flag alerts</span>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <svg class="w-5 h-5 text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                    <span class="text-gray-300 text-sm">Mobile-first call-off creation for on-site project managers</span>
-                                </div>
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-3"><p class="text-xl font-bold text-white">80 &rarr; 180+</p><p class="text-[11px] uppercase tracking-wider text-gray-500">Team scaled</p></div>
+                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-3"><p class="text-xl font-bold text-white">4&times;</p><p class="text-[11px] uppercase tracking-wider text-gray-500">Profit growth</p></div>
+                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-3"><p class="text-xl font-bold text-white">50%</p><p class="text-[11px] uppercase tracking-wider text-gray-500">Turnover reduced</p></div>
+                                <div class="rounded-lg bg-dark-800 border border-white/[0.06] p-3"><p class="text-xl font-bold text-white">5+ yrs</p><p class="text-[11px] uppercase tracking-wider text-gray-500">Sustained growth</p></div>
                             </div>
-
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Next.js</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">TypeScript</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Node.js</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">PostgreSQL</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Prisma</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Claude API</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">PDFKit</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Railway</span>
-                                <span class="px-2.5 py-1 rounded bg-dark-800 text-gray-400 text-xs border border-white/[0.06]">Vercel</span>
-                            </div>
+                            <a href="https://www.pakoa.com/en" target="_blank" rel="noopener" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium">Visit pakoa.com <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                         </div>
-
-                        <!-- Workflow modules side card -->
-                        <div class="space-y-4">
-                            <div class="rounded-xl bg-dark-800 border border-white/[0.06] p-6">
-                                <h4 class="text-sm font-semibold text-primary-400 uppercase tracking-wider mb-4">Workflow modules</h4>
-                                <div class="space-y-4">
-                                    <div>
-                                        <p class="text-sm font-medium text-white mb-1">Jobs Board</p>
-                                        <p class="text-xs text-gray-400 leading-relaxed">Live budget vs. committed vs. actual with margin red-flagging and PM-scoped visibility.</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium text-white mb-1">Cost Sheets</p>
-                                        <p class="text-xs text-gray-400 leading-relaxed">First upload is the baseline; every re-upload is auto-flagged as a variation with delta-vs-baseline and delta-vs-previous, parsed by a Claude agent.</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium text-white mb-1">Call-Offs</p>
-                                        <p class="text-xs text-gray-400 leading-relaxed">PMs create material, labour, and plant requests from the field. Procurement reviews, fills the supplier and amount, and submits.</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium text-white mb-1">Purchase Orders</p>
-                                        <p class="text-xs text-gray-400 leading-relaxed">Read-only log. Generated server-side on call-off submission &mdash; sequential PO numbers, PDFs to object storage, supplier confirmation and split-delivery tracking.</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium text-white mb-1">Invoices</p>
-                                        <p class="text-xs text-gray-400 leading-relaxed">Manual upload, manual PO selection, 5% tolerance auto-match. Materials route to procurement; labour and T&amp;J route to the linked PM. Disputed invoices loop back to the supplier.</p>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-medium text-white mb-1">Notifications</p>
-                                        <p class="text-xs text-gray-400 leading-relaxed">In-app, role-routed: call-off pending, invoice pending approval, variation applied, margin below threshold.</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="lg:col-span-3 space-y-4">
+                            <div class="shot"><img src="/img/work/pakoa-1.webp" width="1600" height="807" alt="Pakoa — honeycomb community view" loading="lazy" decoding="async"></div>
+                            <div class="shot"><img src="/img/work/pakoa-2.webp" width="1600" height="807" alt="Pakoa — performance dashboards" loading="lazy" decoding="async"></div>
                         </div>
                     </div>
                 </div>
@@ -777,6 +1143,7 @@
                 <p class="text-base text-gray-500 max-w-lg mx-auto">
                     Tell us what you're trying to automate, augment, or build. We'll come back within 48 hours with a clear next step.
                 </p>
+                <p class="mt-4 text-sm text-gray-600 tracking-wide">Working from <span class="text-gray-400">Houston</span> &middot; <span class="text-gray-400">CDMX</span> &middot; <span class="text-gray-400">Dubai</span></p>
             </div>
 
             <!-- Contact Form -->
@@ -846,7 +1213,7 @@
     <footer class="py-8 bg-dark-950 border-t border-white/[0.04]">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-600">&copy; 2026 Pantaia Consulting &middot; Dubai, UAE</p>
+                <p class="text-sm text-gray-600">&copy; 2026 Pantaia Consulting &middot; Houston &middot; CDMX &middot; Dubai</p>
                 <div class="flex items-center gap-6">
                     <a href="#services" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">Services</a>
                     <a href="#work" class="text-xs text-gray-600 hover:text-gray-400 transition-colors">Work</a>
