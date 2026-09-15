@@ -1171,6 +1171,8 @@
                             class="w-full bg-dark-800 border border-white/[0.06] rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-primary-500/40 transition-colors resize-none"
                             placeholder="Tell us what you're trying to build..."></textarea>
                     </div>
+                    <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+                    <p id="contact-error" class="hidden text-sm text-red-400"></p>
                     <button type="submit" class="w-full btn-primary py-3 rounded-xl font-medium text-white text-sm">
                         Send Message
                     </button>
@@ -1366,23 +1368,29 @@
         const contactForm = document.getElementById('contact-form');
         const contactSuccess = document.getElementById('contact-success');
 
+        const contactError = document.getElementById('contact-error');
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const data = Object.fromEntries(new FormData(contactForm));
+            contactError.classList.add('hidden');
+            btn.disabled = true; const label = btn.textContent; btn.textContent = 'Sending…';
             try {
-                await fetch('/api/contact', {
+                const res = await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
+                const out = await res.json().catch(() => ({}));
+                if (!res.ok) throw new Error(out.error || 'Could not send your message');
+                contactForm.classList.add('hidden');
+                contactSuccess.classList.remove('hidden');
             } catch (err) {
-                // Silent fail
+                contactError.textContent = (err.message || 'Could not send your message') + ' — you can also email mauricio@pantaia.com directly.';
+                contactError.classList.remove('hidden');
+            } finally {
+                btn.disabled = false; btn.textContent = label;
             }
-
-            contactForm.classList.add('hidden');
-            contactSuccess.classList.remove('hidden');
         });
     </script>
 </body>
