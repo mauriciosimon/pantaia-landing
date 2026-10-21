@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Pantaia">
+  <defs>
+    <linearGradient id="n" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fe0c8"/><stop offset="1" stop-color="#3d8bfd"/></linearGradient>
+    <linearGradient id="h" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2fe0c8"/><stop offset="1" stop-color="#3d8bfd"/></linearGradient>
+  </defs>
+  <path d="M9 72V24q0-13 13-13h56q13 0 13 13v48" fill="none" stroke="url(#n)" stroke-width="6" stroke-linecap="round"/>
+  <g fill="url(#h)"><circle cx="21" cy="23" r="3"/><circle cx="30" cy="23" r="3"/><circle cx="39" cy="23" r="3"/></g>
+  <path d="M38 88V40h16q11.5 0 11.5 11.5v3q0 11.5-11.5 11.5H38" fill="none" stroke="url(#n)" stroke-width="6.5" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
